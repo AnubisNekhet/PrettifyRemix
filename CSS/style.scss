@@ -1,0 +1,68 @@
+/*------------------------------------------------------------------
+Hey there! This card layout is a fork of Pranav Deshai's Prettify Card Layout.
+His repo: https://github.com/pranavdeshai/anki-prettify
+Buy him a coffee at: https://www.buymeacoffee.com/pranavdeshai
+If you liked my take on his theme you can buy me a coffee here:
+https://www.buymeacoffee.com/anubisnekhet
+------------------------------------------------------------------*/
+/* -------------------------------------------------- PREFERENCES */
+:root { 
+  --card-max-width: 40em;
+  --card-text-align: left;
+  --font-size-regular: 21px;
+  --font-size-small: 17px;
+  --img-width: 50%;
+  --img-brightness: 0.75;
+  --img-filter: none;
+  --font-weight: 600;
+  --table-radius: 0.8em;
+  --card-radius: 1em;
+}
+.mobile { 
+  --card-max-width: 40em;
+  --card-text-align: left;
+  --font-size-regular: 17px;
+  --font-size-small: 14px;
+  --img-width: 50%;
+  --img-brightness: 0.75;
+  --img-filter: none;
+  --font-weight: 600;
+  --table-radius: 0.8em;
+  --card-radius: 1em;
+}
+/* -------------------------------------------------- COLORS */
+@import 'src/Colorschemes/latte-lt.scss'; //'-lt' means light theme, '-dt' means dark theme, pick one of each
+@import 'src/Colorschemes/cappuccino-dt.scss'; //you can change colors, mix and match as you feel :)
+/*--------------------------------------------------- THEME VARS */
+@import 'src/Components/theme-variables.scss';
+/*--------------------------------------------------- CARD STYLING */
+@import 'src/Components/body.scss';
+/*--------------------------------------------------- ADDITIONS */
+//This section is upto you, you can add certain css sections specialised for certain decks or misc. features
+@import 'src/Additions/germanlearningdeck.scss';
+@import 'src/Additions/vim.scss';
+@import 'src/Additions/morsecode.scss';
+@import 'src/Additions/dopeanatomy.scss';
+@import 'src/Additions/ultimategeography.scss';
+@import 'src/Additions/imageocclusion.scss';
+@import 'src/Additions/anking.scss';
+@import 'src/Additions/fallacies.scss';
+@import 'src/Additions/zoomable-images.scss';
+@import 'src/Additions/sequence.scss';
+
+.prettify-tags {
+  display: block; //Use 'block' if you want to display tags or 'none' if you want to hide them
+}
+
+/* -------------------------------------------------- FONTS */
+//Add custom fonts here if you want to use them on mobile devices or something
+//Do note that this bloats the css size by a lot
+@import 'src/Fonts/karla.scss';
+/*---------------------------------- SELECT FONTS */
+//Specify fonts here
+:root {
+  --font-family: "Iosevka Comfy Duo", "Arial";
+}
+.mobile {
+  --font-family: "Karla";
+}

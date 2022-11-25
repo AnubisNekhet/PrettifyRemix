@@ -1,0 +1,16 @@
+/*--------------------------FALLACIES---------------------------------*/
+.fallacy-name img {
+  width: 70px;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: inline;
+  vertical-align: middle;
+}
+.night_mode .fallacy-name img {
+  filter: invert(100%);
+}
+.fallacy-example {
+  font-style: italic;
+  color: var(--tag-fg);
+  font-size: var(--font-size-small);
+}

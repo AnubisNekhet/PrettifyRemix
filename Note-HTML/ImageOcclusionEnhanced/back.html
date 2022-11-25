@@ -1,0 +1,125 @@
+{{#Image}}
+<div class="prettify-flashcard">
+  <div class="prettify-deck">{{Deck}}</div>
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+  <div class="prettify-field prettify-field--front">
+    <div class="center-text">{{#Header}}
+      <div id="io-header">{{Header}}</div>
+    </div>
+  </div>
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+  <div class="prettify-field prettify-field--front">
+    <div class="center-text">{{/Header}}
+      <div id="io-wrapper">
+        <div id="io-overlay">{{Answer Mask}}</div>
+        <div id="io-original">{{Image}}</div>
+      </div>
+      {{#Footer}}
+    </div>
+  </div>
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+  <div class="prettify-field prettify-field--front extra">
+    <div class="center-text">
+      <div id="io-footer">{{Footer}}</div>
+      {{/Footer}}
+      {{#Remarks}}
+    </div>
+  </div>
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+  <div class="prettify-field prettify-field--front extra">
+    <div class="center-text">
+      <div id="io-footer">{{Remarks}}</div>
+      {{/Remarks}}
+      {{#Sources}}
+    </div>
+  </div>
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+  <div class="prettify-field prettify-field--front extra">
+    <div class="center-text">
+      <div id="io-footer">{{Sources}}</div>
+      {{/Sources}}
+      {{#Extra 1}}
+    </div>
+  </div>
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+  <div class="prettify-field prettify-field--front extra">
+    <div class="center-text">
+      <div id="io-footer">{{Extra 1}}</div>
+      {{/Extra 1}}
+      {{#Extra 2}}
+    </div>
+  </div>
+  <hr class="prettify-divider prettify-divider--answer" id="answer" />
+  <div class="prettify-field prettify-field--front extra">
+    <div class="center-text">
+      <div id="io-footer">{{Extra 2}}</div>
+      {{/Extra 2}}
+      <button id="io-revl-btn" onclick="toggle();">Toggle Masks</button>
+    </div>
+  </div>
+  {{#Tags}}
+  <div class="prettify-tags">{{clickable:Tags}}</div>
+  {{/Tags}}
+</div>
+
+<script>
+  // Split hierarchical tags
+  var tagsContainerEl = document.querySelectorAll('.prettify-tags > *')
+  if (tagsContainerEl.length > 0) {
+    var tags = []
+    tagsContainerEl.forEach((tagEl) => {
+      tagEl.classList.add('prettify-tag')
+      tags.push(tagEl.innerHTML)
+      tags.forEach((tag) => {
+        var childTag = tag.split('::').filter(Boolean)
+        tagEl.innerHTML = childTag[childTag.length - 1].trim()
+      })
+    })
+  } else {
+    tagsContainerEl = document.querySelector('.prettify-tags')
+    var tags = tagsContainerEl.innerHTML.split(' ').filter(Boolean)
+    var html = ''
+    tags.forEach((tag) => {
+      var childTag = tag.split('::').filter(Boolean)
+      html +=
+        "<span class='prettify-tag'>" +
+        childTag[childTag.length - 1] +
+        '</span>'
+    })
+    tagsContainerEl.innerHTML = html
+  }
+
+  // Breadcrumbs to current deck
+  var deckEl = document.querySelector('.prettify-deck')
+  var subDecks = deckEl.innerHTML.split('::').filter(Boolean)
+  html = []
+  subDecks.forEach((subDeck) => {
+    html.push("<span class='prettify-subdeck'>" + subDeck + '</span>')
+  })
+  deckEl.innerHTML = html.join('&nbsp;/&nbsp;')
+</script>
+
+<script>
+  // Toggle answer mask on clicking the image
+  var toggle = function () {
+    var amask = document.getElementById('io-overlay');
+    if (amask.style.display === 'block' || amask.style.display === '')
+      amask.style.display = 'none';
+    else
+      amask.style.display = 'block'
+  }
+
+  // Prevent original image from loading before mask
+  aFade = 50, qFade = 0;
+  var mask = document.querySelector('#io-overlay>img');
+  function loaded() {
+    var original = document.querySelector('#io-original');
+    original.style.visibility = "visible";
+  }
+  if (mask === null || mask.complete) {
+    loaded();
+  } else {
+    mask.addEventListener('load', loaded);
+  }
+</script>
+{{/Image}}

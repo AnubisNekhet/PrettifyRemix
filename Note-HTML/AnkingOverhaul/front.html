@@ -1,0 +1,187 @@
+{{#Text}}<div class="prettify-flashcard">
+  <div class="prettify-deck">{{Deck}}</div>
+  <div class="prettify-divider prettify-divider--answer"></div>
+  <div class="prettify-field prettify-field--front">
+    <div class="center-text">
+
+      <div id="text">{{cloze:Text}}</div>
+
+    </div>
+  </div>
+  {{#Tags}}
+  <div class="prettify-tags">{{clickable:Tags}}</div>
+  {{/Tags}}
+</div>
+
+<script>
+  // Split hierarchical tags
+  var tagsContainerEl = document.querySelectorAll('.prettify-tags > *')
+  if (tagsContainerEl.length > 0) {
+    var tags = []
+    tagsContainerEl.forEach((tagEl) => {
+      tagEl.classList.add('prettify-tag')
+      tags.push(tagEl.innerHTML)
+      tags.forEach((tag) => {
+        var childTag = tag.split('::').filter(Boolean)
+          tagEl.innerHTML = childTag[childTag.length - 1].trim()
+      })
+    })
+  } else {
+    tagsContainerEl = document.querySelector('.prettify-tags')
+    var tags = tagsContainerEl.innerHTML.split(' ').filter(Boolean)
+    var html = ''
+    tags.forEach((tag) => {
+      var childTag = tag.split('::').filter(Boolean)
+      html +=
+        "<span class='prettify-tag'>" +
+        childTag[childTag.length - 1] +
+        '</span>'
+    })
+    tagsContainerEl.innerHTML = html
+  }
+
+  // Breadcrumbs to current deck
+  var deckEl = document.querySelector('.prettify-deck')
+  var subDecks = deckEl.innerHTML.split('::').filter(Boolean)
+  html = []
+  subDecks.forEach((subDeck) => {
+    html.push("<span class='prettify-subdeck'>" + subDeck + '</span>')
+  })
+  deckEl.innerHTML = html.join('&nbsp;/&nbsp;')
+</script>
+<!-- version 36bc04b -->
+
+<script>
+  //DONT FADE BETWEEN CARDS
+  qFade = 0; if (typeof anki !== 'undefined') anki.qFade = qFade;
+</script>
+<!-- ##############  Text-to-speech  ##############
+replace the arrows/dashes from the statement below with double curly brackets-->
+
+<!--tts en_US voices=Apple_Samantha speed=1.4:cloze:Text-->
+
+
+<script>
+  // ############## USER CONFIGURATION START ##############
+  // Auto flip to back when One by one mode.
+  var autoflip = false
+
+  // Timer config (timer length, timer finished message)
+  var minutes = 0
+  var seconds = 9
+  var timeOverMsg = "<span style='color:#CC5B5B'>!<br/>!<br/>!<br/>!<br/>!<br/>!</span>"
+
+  // ##############  TAG SHORTCUT  ##############
+  var toggleTagsShortcut = "C";
+
+  // ENTER THE TAG TERM WHICH, WHEN PRESENT, WILL TRIGGER A RED BACKGROUND
+  var tagID = "XXXYYYZZZ"
+
+  // WHETHER THE WHOLE TAG OR ONLY THE LAST PART SHOULD BE SHOWN
+
+  var numTagLevelsToShow = 0;
+
+// ############## USER CONFIGURATION END ##############
+</script>
+
+
+<!-- CLOZE ONE BY ONE AUTOFLIP -->
+<script>
+  var clozeOneByOneEnabled = true;
+  try {
+    clozeOneByOneEnabled = `{{One by one}}` !== ""
+  } catch (exception) {
+    console.log(exception)
+  }
+
+  window.clozeHints = [];
+  if (clozeOneByOneEnabled) {
+    // Save cloze hints to display in the back
+    let clozes = document.getElementsByClassName("cloze")
+    for (var i = 0; i < clozes.length; i++) {
+      if (clozes[i].innerHTML === "[...]") {
+        window.clozeHints.push("")
+      } else {
+        window.clozeHints.push(clozes[i].innerHTML)
+      }
+    }
+
+    if (autoflip) {
+      // avoid flickering. Must unset this in the back.
+      document.getElementById("qa").style.display = "none";
+
+      if (window.pycmd) {
+        pycmd("ans")
+      } else if (window.showAnswer) {
+        showAnswer()
+      }
+      // AnkiMobile JS API doesn't have one for show answer. 
+      // Best alternative is to use Taps/Swipes to show answer.
+    }
+  }
+</script>
+
+<!-- NOT-PERSISTING EVENT LISTENER -->
+<script>
+  if (window.ankingEventListeners) {
+    for (const listener of ankingEventListeners) {
+      const type = listener[0]
+      const handler = listener[1]
+      document.removeEventListener(type, handler)
+    }
+  }
+  window.ankingEventListeners = []
+
+  window.ankingAddEventListener = function (type, handler) {
+    document.addEventListener(type, handler)
+    window.ankingEventListeners.push([type, handler])
+  }
+</script>
+
+<!-- Shortcut Matcher Function -->
+<script>
+  var specialCharCodes = {
+    "-": "minus",
+    "=": "equal",
+    "[": "bracketleft",
+    "]": "bracketright",
+    ";": "semicolon",
+    "'": "quote",
+    "`": "backquote",
+    "\\": "backslash",
+    ",": "comma",
+    ".": "period",
+    "/": "slash",
+  };
+  // Returns function that match keyboard event to see if it matches given shortcut.
+  function shortcutMatcher(shortcut) {
+    let shortcutKeys = shortcut.toLowerCase().split(/[+]/).map(key => key.trim())
+    let mainKey = shortcutKeys[shortcutKeys.length - 1]
+    if (mainKey.length === 1) {
+      if (/\d/.test(mainKey)) {
+        mainKey = "digit" + mainKey
+      } else if (/[a-zA-Z]/.test(mainKey)) {
+        mainKey = "key" + mainKey
+      } else {
+        let code = specialCharCodes[mainKey];
+        if (code) {
+          mainKey = code
+        }
+      }
+    }
+    let ctrl = shortcutKeys.includes("ctrl")
+    let shift = shortcutKeys.includes("shift")
+    let alt = shortcutKeys.includes("alt")
+
+    let matchShortcut = function (ctrl, shift, alt, mainKey, event) {
+      if (mainKey !== event.code.toLowerCase()) return false
+      if (ctrl !== (event.ctrlKey || event.metaKey)) return false
+      if (shift !== event.shiftKey) return false
+      if (alt !== event.altKey) return false
+      return true
+    }.bind(window, ctrl, shift, alt, mainKey)
+
+    return matchShortcut
+  }
+</script>
+{{/Text}}

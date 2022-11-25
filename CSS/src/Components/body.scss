@@ -1,0 +1,230 @@
+/* -------------------------------------------------- BACKGROUND */
+.card {
+  cursor: default;
+  padding: 0.5em 0;
+}
+html:not(.mobile) .card {
+  padding: 0.5em;
+}
+.card::-webkit-scrollbar {
+  display: none;
+}
+
+/* -------------------------------------------------- FLASHCARD */
+.prettify-flashcard {
+  background-color: var(--card-bg);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-box-shadow) 0px 7px 14px 0px, var(--card-box-shadow) 0px 3px 6px 0px;
+  color: var(--text-fg);
+  font-family: var(--font-family);
+  font-size: var(--font-size-regular);
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: var(--card-max-width);
+  text-align: var(--card-text-align);
+  word-wrap: normal;
+}
+.prettify-flashcard ::selection {
+  background-color: var(--text-bg-selected);
+}
+.cloze-type {
+    text-align: left;
+}
+/* -------------------------------------------------- FIELDS */
+.prettify-field {
+  margin: 0.75em;
+  margin-bottom: 0.85em;
+}
+.mobile .prettify-field {
+  margin: 0.25em;
+  margin-bottom: 0.75em;
+}
+.prettify-field--back {
+  margin-bottom: 1.4em;
+}
+/* -------------------------------------------------- CLOZE */
+.cloze {
+  border-radius: 0.25em;
+  font-weight: bold;
+  background-color: var(--cloze-bg);
+  color: var(--cloze-fg);
+  padding: 0 0.1em;
+}
+
+/* -------------------------------------------------- DECK */
+.prettify-deck {
+  margin: 0.75em;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+  display: flex;
+  color: var(--text-fg-faint);
+  font-size: var(--font-size-small);
+}
+.mobile .prettify-deck {
+  margin: 1em;
+}
+
+/* -------------------------------------------------- TAGS */
+.prettify-tags {
+  margin: 0.5em;
+  margin-left: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  font-size: var(--font-size-small);
+}
+.mobile .prettify-tags {
+  margin: 1em;
+}
+.prettify-tag {
+  all: initial;
+  background-color: var(--tag-bg);
+  border-radius: 0.2em;
+  color: var(--tag-fg);
+  display: inline;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family);
+  margin: 0.25em;
+  padding: 0.25em;
+  transition: all 0.25s;
+  word-break: break-word;
+}
+.prettify-tag:hover {
+  background-color: var(--tag-bg-active);
+  color: var(--tag-fg-active);
+  cursor: pointer;
+}
+.extra {
+  color: var(--text-fg-faint);
+  font-size: var(--font-size-small);
+}
+/* -------------------------------------------------- DIVIDER */
+.prettify-field hr { border: none; border-bottom: 1px dashed var(--divider); background-color: transparent; width: 80%;}
+.prettify-divider {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dashed var(--divider);
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+
+/* -------------------------------------------------- TABLES */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 60%;
+  position: relative;
+  box-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: scroll;
+  border: 1px solid;
+  text-align: center;
+  border-color: var(--card-border);
+}
+td, th {
+  border: 1px solid;
+  text-align: center;
+  border-color: var(--card-border);
+}
+/*
+tr:first-child td:first-child, tr:first-child th:first-child { border-top-left-radius: 0.8em; }
+tr:first-child td:last-child, tr:first-child th:last-child { border-top-right-radius: 0.8em; }
+tr:last-child td:first-child, tr:last-child th:first-child { border-bottom-left-radius: 0.8em; }
+tr:last-child td:last-child, tr:last-child th:last-child { border-bottom-right-radius: 0.8em; }
+tr:first-child td, tr:first-child th { border-top-width: 2px;}
+tr:last-child td, tr:last-child th { border-bottom-width: 2px;}
+tr td:first-child, tr th:first-child { border-left-width: 2px;}
+tr td:last-child, tr th:last-child { border-right-width: 2px;}*/
+tr:nth-of-type(odd) { background-color: var(--card-box-shadow);}
+/* -------------------------------------------------- HYPERLINKS */
+a, a:visited {
+  text-decoration: none;
+  color: var(--link-fg);
+}
+a:hover, a:active {
+  text-decoration: underline;
+  color: var(--link-fg-active);
+}
+/* ------------------------------------------------------- INPUT */
+input {
+  background-color: var(--card-bg);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--card-border);
+  border-radius: 7px;
+  min-height: 25px;
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-regular) !important;
+  color: var(--text-fg-faint);
+  padding: 10px;
+}
+input::selection {
+  background-color: rgb(var(--ctp-blue)) !important;
+  color: var(--card-bg) !important;
+}
+/* -------------------------------------------------- FORMATTING */
+b {
+  color: none;
+}
+
+i {
+  color: none;
+}
+
+b > i,
+i > b {
+  color: none;
+}
+
+u {
+  color: none;
+}
+
+hl {
+    color: var(--highlight1);
+}
+hl2 {
+    color: var(--highlight2);
+}
+hl3 {
+    color: var(--highlight3);
+}
+hl4 {
+    color: var(--highlight4);
+}
+h1, h2, h3, h4, h5 { margin: 0em;}
+h1 {
+    color: var(--h1-fg);
+}
+h2 {
+    color: var(--h2-fg);
+}
+h3 {
+    color: var(--h3-fg);
+}
+h4 {
+    color: var(--h4-fg);
+}
+h5 {
+    color: var(--h5-fg);
+}
+/*--------REPLAY BUTTON-----------*/
+.replay-button svg circle { fill: var(--card-bg); stroke: var(--tag-bg); stroke-width: 4px; }
+.replay-button svg path { fill: var(--tag-bg); stroke: var(--tag-bg); }
+.replay-button svg { width: 40px; height: 40px;}
+.morsecode {
+  padding: 15px 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  background-color: rgba(220, 224, 232,0.4);
+  border: solid 2px var(--card-border);
+}
+/*--------------------------CENTER TEXT DIV------------------------*/
+.center-text { text-align: center;}
+/*------------------------------------- BUTTONS */
+.night_mode button {
+  background-color: rgb(var(--ctp-mantle)) !important;
+}

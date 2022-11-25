@@ -1,0 +1,24 @@
+/*------------------------------------ GERMAN LEARNING DECK */
+.germanNote {
+  color: rgb(var(--ctp-green));
+}
+.germanNote div, .germanSentence {
+  color: rgb(var(--ctp-teal));
+  font-size: var(--font-size-small);
+}
+.englishNote {
+  color: rgb(var(--ctp-peach));
+}
+.englishNote div, .englishSentence {
+  color: rgb(var(--ctp-maroon));
+  font-size: var(--font-size-small);
+}
+.germanNote font[color="#0000ff"] , .englishNote font[color="#0000ff"] {
+  color: rgb(var(--ctp-blue));
+}
+.germanNote font[color="#ff00ff"] , .englishNote font[color="#ff00ff"] {
+  color: rgb(var(--ctp-mauve));
+}
+.germanNote font[color="#808080"] , .englishNote font[color="#808080"] {
+  color: rgb(var(--ctp-overlay1));
+}

@@ -1,0 +1,33 @@
+/* -------------------------------------------------- IMAGES */
+img {
+  border-radius: 0.25em;
+  display: block;
+  margin: 1em auto;
+  max-width: var(--img-width) !important;
+  transition: max-width 0.25s 0.1s, opacity 0.25s 0.1s, filter 0.1s, transform 0s;
+}
+.night_mode img {
+  filter: var(--img-filter);
+  opacity: var(--img-brightness);
+}
+img:hover {
+  cursor: zoom-in;
+  filter: none;
+  max-width: 100% !important;
+  opacity: 1;
+}
+img + br {
+  display: none;
+}
+html:not(.mobile) img:active {
+  border: 1px solid var(--link-fg-active);
+  cursor: zoom-out;
+  filter: none;
+  left: 0;
+  max-width: 95% !important;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+  z-index: 100;
+}

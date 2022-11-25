@@ -1,0 +1,25 @@
+/*------------------------------------ DOPE ANATOMY */
+.dope-origin {
+  color: rgb(var(--ctp-green));
+}
+.dope-insertion {
+  color: rgb(var(--ctp-red));
+}
+.dope-innervation {
+  color: rgb(var(--ctp-peach));
+}
+.dope-attachments {
+  color: rgb(var(--ctp-peach));
+}
+.dope-actions {
+  color: rgb(var(--ctp-sky));
+}
+.dope-image img {
+  opacity: 100% !important;
+  max-width: 100% !important;
+  cursor: default;
+  &:hover {
+    max-width: 100% !important;
+    cursor: default;
+  }
+}

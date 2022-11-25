@@ -1,0 +1,26 @@
+/*------------------------------------ VIM */
+.keybinding, .vimcommand {
+  padding: 15px 20px 15px 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  background-color: rgba(220, 224, 232,0.4);
+  margin-bottom: 10px;
+}
+.keybinding {
+  border: solid 2px var(--card-border);
+  border-bottom: solid 5px var(--card-border);
+}
+.vimcommand {
+  color: rgb(var(--ctp-green));
+  border: solid 2px rgb(var(--ctp-green));
+  border-bottom: solid 5px rgb(var(--ctp-green));
+}
+/* Night Mode Fixes */
+.night_mode .keybinding { 
+  border: solid 2px rgba(152, 139, 162,0.2);
+  border-bottom: solid 5px rgba(152, 139, 162,0.2);
+}
+.night_mode .keybinding, .night_mode .vimcommand {
+  background-color: rgba(26, 24, 38,0.4); 
+}

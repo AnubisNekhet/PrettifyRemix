@@ -1,0 +1,18 @@
+/*------------------------------------ ULTIMATE GEOGRAPHY */
+/* Inputting Country/Capital Names */
+.country-input input {
+  text-align: center;
+}
+/* Making Country Flags a bit bigger */
+.country-flag img {
+  border-radius: 0.25em;
+  display: block;
+  margin: 1em auto;
+  min-width: 50% !important;
+  opacity: 1 !important;
+}
+/* Hints */
+.hint-text {
+  font-size: 80%;
+  color: rgb(var(--ctp-subtext0));
+}

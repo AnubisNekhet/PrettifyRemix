@@ -1,0 +1,14 @@
+/*------------------------------------ MORSE CODE */
+.morsecode {
+  border: solid 2px var(--card-border);
+  border-bottom: solid 5px var(--card-border);
+  background-color: rgba(220, 224, 232,0.4);
+  max-width: fit-content;
+  margin: 0 auto;
+  color: rgb(var(--ctp-peach));
+}
+.night_mode .morsecode {
+  border: solid 2px rgba(152, 139, 162,0.2);
+  border-bottom: solid 5px rgba(152, 139, 162,0.2);
+  background-color: rgba(26, 24, 38,0.4); 
+}

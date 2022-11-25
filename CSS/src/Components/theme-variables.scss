@@ -1,0 +1,55 @@
+.card, .card.night_mode {
+  --text-fg: rgb(var(--ctp-text)); 
+  --text-fg-faint: rgb(var(--ctp-subtext0)); 
+  --text-bg-selected: rgb(var(--ctp-surface1)); 
+  --card-border: rgb(var(--ctp-overlay0));
+  --card-box-shadow: #0000001f;
+  --divider: rgb(var(--ctp-overlay0)); 
+  --tag-fg: rgb(var(--ctp-subtext1));
+  --tag-bg: rgb(var(--ctp-overlay0)); 
+  --tag-fg-active: rgb(var(--ctp-rosewater));
+  --tag-bg-active: rgb(var(--ctp-surface2));
+  --tag-border: transparent;
+  --cloze-fg: rgb(var(--ctp-yellow));
+  --cloze-bg: rgb(var(--ctp-base));
+  --link-fg: rgb(var(--ctp-blue)); 
+  --link-bg: transparent;
+  --link-fg-active: rgb(var(--ctp-sky)); 
+  --link-bg-active: transparent;
+  --bold-fg: rgb(var(--ctp-red));
+  --italic-fg: rgb(var(--ctp-green)); 
+  --h1-fg: rgb(var(--ctp-peach));
+  --h2-fg: rgb(var(--ctp-teal)); 
+  --h3-fg: rgb(var(--ctp-mauve)); 
+  --h4-fg: rgb(var(--ctp-red)); 
+  --h5-fg: rgb(var(--ctp-sky)); 
+  --bold-italic-fg: rgb(var(--bold-fg));
+  --highlight1: rgb(var(--ctp-maroon)); 
+  --highlight2: rgb(var(--ctp-green)); 
+  --highlight3: rgb(var(--ctp-lavender)); 
+  --highlight4: rgb(var(--ctp-peach)); 
+  --scheme-rosewater: rgb(var(--ctp-rosewater));
+  --scheme-flamingo: rgb(var(--ctp-flamingo));
+  --scheme-pink: rgb(var(--ctp-pink));
+  --scheme-mauve: rgb(var(--ctp-mauve));
+  --scheme-red: rgb(var(--ctp-red));
+  --scheme-maroon: rgb(var(--ctp-maroon));
+  --scheme-peach: rgb(var(--ctp-peach));
+  --scheme-yellow: rgb(var(--ctp-yellow));
+  --scheme-green: rgb(var(--ctp-green));
+  --scheme-teal: rgb(var(--ctp-teal));
+  --scheme-sky: rgb(var(--ctp-sky));
+  --scheme-sapphire: rgb(var(--ctp-sapphire));
+  --scheme-blue: rgb(var(--ctp-blue));
+  --scheme-lavender: rgb(var(--ctp-lavender));
+  --scheme-crust: rgb(var(-ctp-crust));
+  --scheme-grey: rgb(var(--ctp-subtext0));
+}
+.card {
+  --card-bg: rgb(var(--ctp-base));
+  background-color: rgb(var(--ctp-mantle));
+}
+.card.night_mode {
+  background-color: rgb(var(--ctp-base)); 
+  --card-bg: rgb(var(--ctp-surface0));
+}
