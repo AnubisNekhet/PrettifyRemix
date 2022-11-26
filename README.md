@@ -34,3 +34,21 @@ Run this code in the root folder of the repo:
 Copy the css to each note template manually.
 
 ## Previews
+### Anking Overhaul
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/AnkingOverhaul-f.png" style="margin-left: auto; margin-right: auto;">
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/AnkingOverhaul-b.png" style="margin-left: auto; margin-right: auto;">
+## Cloze
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/Cloze-f.png" style="margin-left: auto; margin-right: auto;">
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/Cloze-b.png" style="margin-left: auto; margin-right: auto;">
+## Image Occlusion Enhanced
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/ImageOcclusionEnhanced-f.png" style="margin-left: auto; margin-right: auto;">
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/ImageOcclusionEnhanced-b.png" style="margin-left: auto; margin-right: auto;">
+## Reversed
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/Reversed-f.png" style="margin-left: auto; margin-right: auto;">
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/Reversed-b.png" style="margin-left: auto; margin-right: auto;">
+## Sequence
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/Sequence-f.png" style="margin-left: auto; margin-right: auto;">
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/Sequence-b.png" style="margin-left: auto; margin-right: auto;">
+## Sequence Vanilla
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/Sequence-Vanilla-f.png" style="margin-left: auto; margin-right: auto;">
+<img src="https://raw.githubusercontent.com/AnubisNekhet/PrettifyRemix/main/Assets/Sequence-Vanilla-b.png" style="margin-left: auto; margin-right: auto;">
