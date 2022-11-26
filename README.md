@@ -2,6 +2,10 @@
 
 This repo contains templates inspired from [@pranavdeshai's](https://github.com/pranavdeshai) [Prettify](https://github.com/pranavdeshai/anki-prettify) deck for various uses.
 
+### If you like my cards:
+I've made this collection primarily for my own purposes and it's completely free, but if you do like it enough to consider throwing a few coins in my hat, here's a link.<br>
+<a href="https://www.buymeacoffee.com/anubisnekhet" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 ## Index
 
 | Note type | Link to apkg | Remarks |
