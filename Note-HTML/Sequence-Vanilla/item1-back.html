@@ -2,10 +2,10 @@
   <div class="center-text random-title">
     {{Title}}
   </div>
-  <hr>
+<hr>
 {{/Title}}
-  <div class="center-text random-back">
-    <div class="random-items">★!{{edit:Item 1}}★?★,
+  <div class="center-text">
+    <div class="random-items random-back">★!{{edit:Item 1}}★?★,
 {{edit:Item 2}}★,
 {{edit:Item 3}}★,
 {{edit:Item 4}}★,
@@ -15,64 +15,61 @@
 {{edit:Item 8}}★,
 {{edit:Item 9}}★,
 {{edit:Item 10}}</div>
-  </div>
-  <div class="center-text cloze" style="max-width: fit-content; padding: 0 5px; margin: 0 auto;">
+    <div class="center-text cloze" style="max-width: fit-content; padding: 0 5px; margin: 0 auto;">
       {{Item 1}}
+    </div>
   </div>
-  <hr>
-  <div class="center-text">
-    <div class="random-answers"></div>
-  </div>
+<hr>
+<div class="center-text">
+  <div class="random-answers"></div>
+</div>
 {{#Extra}}
   <hr>
-  <div class="center-text random-extra">
-    {{Extra}}
-  </div>
+  <div class="center-text random-extra">{{Extra}}</div>
 {{/Extra}}
 <script>
-  function randomize(values) {
-    let index = values.length, randomIndex;
-    // While there remain elements to shuffle.
-    while (index != 0) {
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * index);
-      index--;
-      // And swap it with the current element.
-      [values[index], values[randomIndex]] = [
-        values[randomIndex], values[index]];
-    }
-    return values;
+function randomize(values) {
+  let index = values.length, randomIndex;
+  // While there remain elements to shuffle.
+  while (index != 0) {
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * index);
+    index--;
+    // And swap it with the current element.
+    [values[index], values[randomIndex]] = [
+      values[randomIndex], values[index]];
   }
-  // Randomize Items
-  var itemEl = document.querySelector('.random-items')
-  var questionEl = document.querySelector('.random-questions')
-  var answerEl = document.querySelector('.random-answers')
-  var itemArray = itemEl.innerHTML.split('★,\n').filter(Boolean)
-  var answerArray = itemArray
-  var questionArray = itemArray
-  reformedText = []
-  reformedAnswers = []
-  reformedQuestions = []
-  //items
-  itemArray.forEach((itemRandom) => {
-    reformedText.push("<span class='randomize-item'>" + itemRandom + "</span>")
-  })
-  itemEl.innerHTML = randomize(reformedText).join(', ').replace("★!", "").replace("★?", "")
-
-  //answers
-  answerArray.forEach((answerRandom) => {
-    reformedAnswers.push("<span class='randomize-answer'>" + answerRandom + "</span>")
-  })
-  answerEl.innerHTML = reformedAnswers.join('<br>').replace("★!", "<span class='randomize-highlight'>").replace("★?", "</span>")
-  //questions
-  questionArray.forEach((questionRandom, questionNumber) => {
-    questionNumber++
-    if (questionRandom.includes("★!") === true) {
-      reformedQuestions.push("<span class='randomize-question randomize-highlight'>[" + questionNumber + "]</span>")
-    } else {
-      reformedQuestions.push("<span class='randomize-question'>[" + questionNumber + "]</span>")
-    }
-  })
-  questionEl.innerHTML = reformedQuestions.join(', ').replace("★!", "<span class='randomize-highlight'>").replace("★?", "</span>")
+  return values;
+}
+// Randomize Items
+var itemEl = document.querySelector('.random-items')
+var questionEl = document.querySelector('.random-questions')
+var answerEl = document.querySelector('.random-answers')
+var itemArray = itemEl.innerHTML.split('★,\n').filter(Boolean)
+var answerArray = itemArray
+var questionArray = itemArray
+reformedText = []
+reformedAnswers = []
+reformedQuestions = []
+//items
+itemArray.forEach((itemRandom) => {
+  reformedText.push("<span class='randomize-item'>" + itemRandom + "</span>")
+})
+itemEl.innerHTML = randomize(reformedText).join(', ').replace("★!", "").replace("★?", "")
+//answers
+answerArray.forEach((answerRandom) => {
+  reformedAnswers.push("<span class='randomize-answer'>" + answerRandom + "</span>")
+})
+answerEl.innerHTML = reformedAnswers.join('<br>').replace("★!", "<span class='randomize-highlight'>").replace("★?", "</span>")
+//questions
+questionArray.forEach((questionRandom, questionNumber) => {
+  questionNumber++
+  if (questionRandom.includes("★!") === true) {
+    reformedQuestions.push("<span class='randomize-question randomize-highlight'>[" + questionNumber + "]</span>")
+  } else {
+    reformedQuestions.push("<span class='randomize-question'>[" + questionNumber + "]</span>")
+  }
+})
+questionEl.innerHTML = reformedQuestions.join('<br>').replace("★!", "<span class='randomize-highlight'>").replace("★?", "</span>")
 
 </script>

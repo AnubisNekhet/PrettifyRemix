@@ -4,14 +4,17 @@
 .random-title {
   font-size: 130%
 }
+.random-extra {
+	font-size: 80%;
+}
 .random-back {
   display: none;
   /*-!!!!NEVER DELETE THIS PART
    This hides the list on the backside of the card-*/
 }
-.randomize-highlight {
-  color: yellow;
-}
 .cloze {
   color: yellow;
+}
+.randomize-highlight {
+	color: yellow;
 }

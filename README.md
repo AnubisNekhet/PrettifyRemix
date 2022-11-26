@@ -10,7 +10,7 @@ This repo contains templates inspired from [@pranavdeshai's](https://github.com/
 | Reversed Optional | [link](https://github.com/AnubisNekhet/PrettifyRemix/blob/main/Note-HTML/Reversed-Optional/Reversed-Optional.apkg) | - |
 | Cloze | [link](https://github.com/AnubisNekhet/PrettifyRemix/blob/main/Note-HTML/Cloze/Cloze.apkg) | Contains an extra parameter to align items left |
 | Sequence | [link](https://github.com/AnubisNekhet/PrettifyRemix/blob/main/Note-HTML/Sequence/Sequence.apkg) | Randomised item sequences using JS |
-| Vanilla Sequence | - | Sequence but with minimal css and html |
+| Vanilla Sequence | [link](https://github.com/AnubisNekhet/PrettifyRemix/blob/main/Note-HTML/Sequence-Vanilla/Sequence-Vanilla.apkg) | Sequence but with minimal css and html |
 | Image Occlusion Enhanced | [link](https://github.com/AnubisNekhet/PrettifyRemix/blob/main/Note-HTML/ImageOcclusionEnhanced/ImageOcclusionEnhanced.apkg) | - |
 | Anking Overhaul | [link](https://github.com/AnubisNekhet/PrettifyRemix/blob/main/Note-HTML/AnkingOverhaul/AnkingOverhaul.apkg) | WIP |
 
@@ -32,3 +32,5 @@ Run this code in the root folder of the repo:
 </pre>
 
 Copy the css to each note template manually.
+
+## Previews
