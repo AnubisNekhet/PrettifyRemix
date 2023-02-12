@@ -1,0 +1,12 @@
+.replay-button svg circle { fill: var(--card-bg); stroke: var(--tag-bg); stroke-width: 4px; }
+.replay-button svg path { fill: var(--tag-bg); stroke: var(--tag-bg); }
+.replay-button svg { width: 40px; height: 40px;}
+.morsecode {
+  padding: 15px 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  background-color: rgba(220, 224, 232,0.4);
+  border: solid 2px var(--card-border);
+}
+

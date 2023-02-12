@@ -1,0 +1,17 @@
+input {
+  background-color: var(--card-bg);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--card-border);
+  border-radius: 7px;
+  min-height: 25px;
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size-regular) !important;
+  color: var(--text-fg-faint);
+  padding: 10px;
+}
+input::selection {
+  background-color: rgb(var(--ctp-blue)) !important;
+  color: var(--card-bg) !important;
+}
+

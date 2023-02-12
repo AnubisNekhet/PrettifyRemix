@@ -1,0 +1,30 @@
+@for $i from 1 through 6 {
+  h#{$i} {
+      color: var(--h#{$i}-fg);
+      margin: 0em;
+      &.title {
+        color: var(--text-fg);
+      }
+  }
+}
+pre {
+	font-size: var(--font-size-small);
+	background-color: var(--cloze-bg);
+	padding: 10px;
+	border-radius: calc(var(--card-radius)*0.5);
+	max-width: fit-content;
+	min-width: 80%;
+	margin: 0 auto;
+}
+.title-field {
+  color: var(--text-fg);
+  font-size: 140%;
+  font-weight: bold;
+}
+// ul ol no margin after heading
+:is(h1, h2, h3, h4, h5, h6) + :is(ul, ol) {
+  margin-block-start: 5px;
+}
+ol li::marker {
+  color: var(--scheme-blue);
+}

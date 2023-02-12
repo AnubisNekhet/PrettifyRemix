@@ -1,0 +1,18 @@
+button,
+.isMac button {
+  background-color: var(--tag-bg);
+  color: var(--tag-fg);
+  color: var(--text-fg);
+  border-radius: 0.2em;
+  box-shadow: none;
+  border: 1px solid var(--card-border);
+  border-bottom-color: var(--card-border);
+  font-size: var(--font-size-small);
+  font-family: inherit;
+  transition: all 0.25s;
+  &:active, &:hover {
+    background-color: var(--tag-bg-active);
+    color: var(--tag-fg-active);
+    cursor: pointer;
+  }
+}
