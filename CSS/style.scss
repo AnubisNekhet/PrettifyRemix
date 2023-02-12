@@ -9,46 +9,46 @@ https://www.buymeacoffee.com/anubisnekhet
 :root { 
   --card-max-width: 40em;
   --card-text-align: left;
-  --font-size-regular: 21px;
-  --font-size-small: 17px;
+  --font-size-regular: 16px;
+  --font-size-small: 14px;
   --img-width: 50%;
-  --img-brightness: 0.75;
+  --img-brightness: 0.95;
   --img-filter: none;
   --font-weight: 600;
   --table-radius: 0.8em;
-  --card-radius: 1em;
+  --card-radius: 8px;
 }
 .mobile { 
   --card-max-width: 40em;
   --card-text-align: left;
-  --font-size-regular: 17px;
+  --font-size-regular: 16px;
   --font-size-small: 14px;
   --img-width: 50%;
-  --img-brightness: 0.75;
+  --img-brightness: 0.95;
   --img-filter: none;
   --font-weight: 600;
   --table-radius: 0.8em;
-  --card-radius: 1em;
+  --card-radius: 8px;
 }
 /* -------------------------------------------------- COLORS */
-@import 'src/Colorschemes/latte-lt.scss'; //'-lt' means light theme, '-dt' means dark theme, pick one of each
-@import 'src/Colorschemes/cappuccino-dt.scss'; //you can change colors, mix and match as you feel :)
+@import 'src/Components/Colorschemes/latte-lt.scss'; //'-lt' means light theme, '-dt' means dark theme, pick one of each
+@import 'src/Components/Colorschemes/generic-dt.scss'; //you can change colors, mix and match as you feel :)
 /*--------------------------------------------------- THEME VARS */
 @import 'src/Components/theme-variables.scss';
 /*--------------------------------------------------- CARD STYLING */
 @import 'src/Components/body.scss';
 /*--------------------------------------------------- ADDITIONS */
 //This section is upto you, you can add certain css sections specialised for certain decks or misc. features
-@import 'src/Additions/germanlearningdeck.scss';
-@import 'src/Additions/vim.scss';
-@import 'src/Additions/morsecode.scss';
-@import 'src/Additions/dopeanatomy.scss';
-@import 'src/Additions/ultimategeography.scss';
-@import 'src/Additions/imageocclusion.scss';
-@import 'src/Additions/anking.scss';
-@import 'src/Additions/fallacies.scss';
-@import 'src/Additions/zoomable-images.scss';
-@import 'src/Additions/sequence.scss';
+ @import 'src/Additions/germanlearningdeck.scss';
+ @import 'src/Additions/vim.scss';
+ @import 'src/Additions/morsecode.scss';
+ @import 'src/Additions/dopeanatomy.scss';
+ @import 'src/Additions/ultimategeography.scss';
+ @import 'src/Additions/imageocclusion.scss';
+ @import 'src/Additions/anking.scss';
+ @import 'src/Additions/fallacies.scss';
+ // @import 'src/Additions/zoomable-images.scss';
+ @import 'src/Additions/sequence.scss';
 
 .prettify-tags {
   display: block; //Use 'block' if you want to display tags or 'none' if you want to hide them
@@ -61,7 +61,7 @@ https://www.buymeacoffee.com/anubisnekhet
 /*---------------------------------- SELECT FONTS */
 //Specify fonts here
 :root {
-  --font-family: "Iosevka Comfy Duo", "Arial";
+  --font-family: "Karla";
 }
 .mobile {
   --font-family: "Karla";

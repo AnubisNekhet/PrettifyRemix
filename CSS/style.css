@@ -10,31 +10,92 @@ https://www.buymeacoffee.com/anubisnekhet
 :root {
   --card-max-width: 40em;
   --card-text-align: left;
-  --font-size-regular: 21px;
-  --font-size-small: 17px;
+  --font-size-regular: 16px;
+  --font-size-small: 14px;
   --img-width: 50%;
-  --img-brightness: 0.75;
+  --img-brightness: 0.95;
   --img-filter: none;
   --font-weight: 600;
   --table-radius: 0.8em;
-  --card-radius: 1em;
+  --card-radius: 8px;
 }
 
 .mobile {
   --card-max-width: 40em;
   --card-text-align: left;
-  --font-size-regular: 17px;
+  --font-size-regular: 16px;
   --font-size-small: 14px;
   --img-width: 50%;
-  --img-brightness: 0.75;
+  --img-brightness: 0.95;
   --img-filter: none;
   --font-weight: 600;
   --table-radius: 0.8em;
-  --card-radius: 1em;
+  --card-radius: 8px;
 }
 
 /* -------------------------------------------------- COLORS */
+.card.card.night_mode {
+  background-color: #242426;
+  --text-fg: #ffffffe6;
+  --text-fg-faint: #ffffffb3;
+  --text-bg-selected: #ffffff1f;
+  --card-bg: #2e2f31;
+  --card-border: #ffffff0a;
+  --card-box-shadow: #0000001f;
+  --divider: #ffffff1f;
+  --tag-fg: #ffffffb3;
+  --tag-bg: #ffffff14;
+  --tag-fg-active: #ffffff;
+  --tag-bg-active: #ffffff1f;
+}
+
+/*--------------------------------------------------- THEME VARS */
 .card {
+  --text-fg: #4C4F69;
+  --text-fg-faint: #6C6F85;
+  --text-bg-selected: #BCC0CC;
+  --card-border: #BCC0CC;
+  --card-box-shadow: #0000001f;
+  --divider: #BCC0CC;
+  --tag-fg: #5C5F77;
+  --tag-bg: #9CA0B0;
+  --tag-fg-active: #DE9584;
+  --tag-bg-active: #ACB0BE;
+  --tag-border: transparent;
+  --cloze-fg: #E49320;
+  --cloze-bg: #EFF1F5;
+  --link-fg: #2A6EF5;
+  --link-bg: transparent;
+  --link-fg-active: #04A5E5;
+  --link-bg-active: transparent;
+  --bold-fg: #D20F39;
+  --italic-fg: #40A02B;
+  --h1-fg: #FE640B;
+  --h2-fg: #179299;
+  --h3-fg: #8839EF;
+  --h4-fg: #D20F39;
+  --h5-fg: #04A5E5;
+  --bold-italic-fg: var(--bold-fg);
+  --highlight1: #E64553;
+  --highlight2: #40A02B;
+  --highlight3: #7287FD;
+  --highlight4: #FE640B;
+  --scheme-rosewater: #DE9584;
+  --scheme-flamingo: #DD7878;
+  --scheme-pink: #EC83D0;
+  --scheme-mauve: #8839EF;
+  --scheme-red: #D20F39;
+  --scheme-maroon: #E64553;
+  --scheme-peach: #FE640B;
+  --scheme-yellow: #E49320;
+  --scheme-green: #40A02B;
+  --scheme-teal: #179299;
+  --scheme-sky: #04A5E5;
+  --scheme-sapphire: #209FB5;
+  --scheme-blue: #2A6EF5;
+  --scheme-lavender: #7287FD;
+  --scheme-crust: #DCE0E8;
+  --scheme-grey: #6C6F85;
   --ctp-rosewater: 222, 149, 132;
   --ctp-flamingo: 221, 120, 120;
   --ctp-pink: 236, 131, 208;
@@ -63,7 +124,57 @@ https://www.buymeacoffee.com/anubisnekhet
   --ctp-crust: 220, 224, 232;
 }
 
+.card {
+  --card-bg: #EFF1F5;
+  background-color: #E6E9EF;
+}
+
 .card.night_mode {
+  --text-fg: #FFFFFF;
+  --text-fg-faint: #BDBDBD;
+  --text-bg-selected: #545454;
+  --card-border: #545454;
+  --card-box-shadow: #0000001f;
+  --divider: #545454;
+  --tag-fg: #D2D2D2;
+  --tag-bg: #7E7E7E;
+  --tag-fg-active: #F5E0DC;
+  --tag-bg-active: #696969;
+  --tag-border: transparent;
+  --cloze-fg: #F9E2AF;
+  --cloze-bg: #2A2A2A;
+  --link-fg: #87B0F9;
+  --link-bg: transparent;
+  --link-fg-active: #89DCEB;
+  --link-bg-active: transparent;
+  --bold-fg: #F38BA8;
+  --italic-fg: #A6E3A1;
+  --h1-fg: #FAB387;
+  --h2-fg: #94E2D5;
+  --h3-fg: #CBA6F7;
+  --h4-fg: #F38BA8;
+  --h5-fg: #89DCEB;
+  --bold-italic-fg: var(--bold-fg);
+  --highlight1: #EBA0AC;
+  --highlight2: #A6E3A1;
+  --highlight3: #B4BEFE;
+  --highlight4: #FAB387;
+  --scheme-rosewater: #F5E0DC;
+  --scheme-flamingo: #F2CDCD;
+  --scheme-pink: #F5C2E7;
+  --scheme-mauve: #CBA6F7;
+  --scheme-red: #F38BA8;
+  --scheme-maroon: #EBA0AC;
+  --scheme-peach: #FAB387;
+  --scheme-yellow: #F9E2AF;
+  --scheme-green: #A6E3A1;
+  --scheme-teal: #94E2D5;
+  --scheme-sky: #89DCEB;
+  --scheme-sapphire: #74C7EC;
+  --scheme-blue: #87B0F9;
+  --scheme-lavender: #B4BEFE;
+  --scheme-crust: #000000;
+  --scheme-grey: #BDBDBD;
   --ctp-rosewater: 245, 224, 220;
   --ctp-flamingo: 242, 205, 205;
   --ctp-pink: 245, 194, 231;
@@ -78,85 +189,30 @@ https://www.buymeacoffee.com/anubisnekhet
   --ctp-sapphire: 116, 199, 236;
   --ctp-blue: 135, 176, 249;
   --ctp-lavender: 180, 190, 254;
-  --ctp-text: 217, 224, 238;
-  --ctp-subtext1: 211, 205, 214;
-  --ctp-subtext0: 190, 179, 193;
-  --ctp-overlay2: 167, 156, 176;
-  --ctp-overlay1: 152, 139, 162;
-  --ctp-overlay0: 109, 107, 125;
-  --ctp-surface2: 87, 82, 105;
-  --ctp-surface1: 45, 40, 72;
-  --ctp-surface0: 48, 45, 65;
-  --ctp-base: 30, 30, 46;
-  --ctp-mantle: 26, 24, 38;
-  --ctp-crust: 22, 19, 32;
-  --text-fg-faint: rgb(var(--ctp-overlay1)) !important;
-}
-
-/*--------------------------------------------------- THEME VARS */
-.card, .card.night_mode {
-  --text-fg: rgb(var(--ctp-text));
-  --text-fg-faint: rgb(var(--ctp-subtext0));
-  --text-bg-selected: rgb(var(--ctp-surface1));
-  --card-border: rgb(var(--ctp-overlay0));
-  --card-box-shadow: #0000001f;
-  --divider: rgb(var(--ctp-overlay0));
-  --tag-fg: rgb(var(--ctp-subtext1));
-  --tag-bg: rgb(var(--ctp-overlay0));
-  --tag-fg-active: rgb(var(--ctp-rosewater));
-  --tag-bg-active: rgb(var(--ctp-surface2));
-  --tag-border: transparent;
-  --cloze-fg: rgb(var(--ctp-yellow));
-  --cloze-bg: rgb(var(--ctp-base));
-  --link-fg: rgb(var(--ctp-blue));
-  --link-bg: transparent;
-  --link-fg-active: rgb(var(--ctp-sky));
-  --link-bg-active: transparent;
-  --bold-fg: rgb(var(--ctp-red));
-  --italic-fg: rgb(var(--ctp-green));
-  --h1-fg: rgb(var(--ctp-peach));
-  --h2-fg: rgb(var(--ctp-teal));
-  --h3-fg: rgb(var(--ctp-mauve));
-  --h4-fg: rgb(var(--ctp-red));
-  --h5-fg: rgb(var(--ctp-sky));
-  --bold-italic-fg: rgb(var(--bold-fg));
-  --highlight1: rgb(var(--ctp-maroon));
-  --highlight2: rgb(var(--ctp-green));
-  --highlight3: rgb(var(--ctp-lavender));
-  --highlight4: rgb(var(--ctp-peach));
-  --scheme-rosewater: rgb(var(--ctp-rosewater));
-  --scheme-flamingo: rgb(var(--ctp-flamingo));
-  --scheme-pink: rgb(var(--ctp-pink));
-  --scheme-mauve: rgb(var(--ctp-mauve));
-  --scheme-red: rgb(var(--ctp-red));
-  --scheme-maroon: rgb(var(--ctp-maroon));
-  --scheme-peach: rgb(var(--ctp-peach));
-  --scheme-yellow: rgb(var(--ctp-yellow));
-  --scheme-green: rgb(var(--ctp-green));
-  --scheme-teal: rgb(var(--ctp-teal));
-  --scheme-sky: rgb(var(--ctp-sky));
-  --scheme-sapphire: rgb(var(--ctp-sapphire));
-  --scheme-blue: rgb(var(--ctp-blue));
-  --scheme-lavender: rgb(var(--ctp-lavender));
-  --scheme-crust: rgb(var(-ctp-crust));
-  --scheme-grey: rgb(var(--ctp-subtext0));
-}
-
-.card {
-  --card-bg: rgb(var(--ctp-base));
-  background-color: rgb(var(--ctp-mantle));
+  --ctp-text: 255, 255, 255;
+  --ctp-subtext1: 210, 210, 210;
+  --ctp-subtext0: 189, 189, 189;
+  --ctp-overlay2: 168, 168, 168;
+  --ctp-overlay1: 147, 147, 147;
+  --ctp-overlay0: 126, 126, 126;
+  --ctp-surface2: 105, 105, 105;
+  --ctp-surface1: 84, 84, 84;
+  --ctp-surface0: 63, 63, 63;
+  --ctp-base: 42, 42, 42;
+  --ctp-mantle: 21, 21, 21;
+  --ctp-crust: 0, 0, 0;
 }
 
 .card.night_mode {
-  background-color: rgb(var(--ctp-base));
-  --card-bg: rgb(var(--ctp-surface0));
+  background-color: #2A2A2A;
+  --card-bg: #3F3F3F;
 }
 
 /*--------------------------------------------------- CARD STYLING */
 /* -------------------------------------------------- BACKGROUND */
 .card {
   cursor: default;
-  padding: 0.5em 0;
+  padding: 0.5em 0.2em;
 }
 
 html:not(.mobile) .card {
@@ -223,10 +279,23 @@ html:not(.mobile) .card {
   display: flex;
   color: var(--text-fg-faint);
   font-size: var(--font-size-small);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: scroll;
+}
+
+.prettify-deck::-webkit-scrollbar {
+  display: none;
 }
 
 .mobile .prettify-deck {
   margin: 1em;
+}
+
+.prettify-subdeck {
+  text-overflow: ellipsis;
+  overflow: clip;
+  min-width: fit-content;
 }
 
 /* -------------------------------------------------- TAGS */
@@ -328,6 +397,79 @@ a:hover, a:active {
   color: var(--link-fg-active);
 }
 
+/* -------------------------------------------------- FORMATTING */
+h1 {
+  color: var(--h1-fg);
+  margin: 0em;
+}
+h1.title {
+  color: var(--text-fg);
+}
+
+h2 {
+  color: var(--h2-fg);
+  margin: 0em;
+}
+h2.title {
+  color: var(--text-fg);
+}
+
+h3 {
+  color: var(--h3-fg);
+  margin: 0em;
+}
+h3.title {
+  color: var(--text-fg);
+}
+
+h4 {
+  color: var(--h4-fg);
+  margin: 0em;
+}
+h4.title {
+  color: var(--text-fg);
+}
+
+h5 {
+  color: var(--h5-fg);
+  margin: 0em;
+}
+h5.title {
+  color: var(--text-fg);
+}
+
+h6 {
+  color: var(--h6-fg);
+  margin: 0em;
+}
+h6.title {
+  color: var(--text-fg);
+}
+
+pre {
+  font-size: var(--font-size-small);
+  background-color: var(--cloze-bg);
+  padding: 10px;
+  border-radius: calc(var(--card-radius) * 0.5);
+  max-width: fit-content;
+  min-width: 80%;
+  margin: 0 auto;
+}
+
+.title-field {
+  color: var(--text-fg);
+  font-size: 140%;
+  font-weight: bold;
+}
+
+:is(h1, h2, h3, h4, h5, h6) + :is(ul, ol) {
+  margin-block-start: 5px;
+}
+
+ol li::marker {
+  color: var(--scheme-blue);
+}
+
 /* ------------------------------------------------------- INPUT */
 input {
   background-color: var(--card-bg);
@@ -345,64 +487,6 @@ input {
 input::selection {
   background-color: rgb(var(--ctp-blue)) !important;
   color: var(--card-bg) !important;
-}
-
-/* -------------------------------------------------- FORMATTING */
-b {
-  color: none;
-}
-
-i {
-  color: none;
-}
-
-b > i,
-i > b {
-  color: none;
-}
-
-u {
-  color: none;
-}
-
-hl {
-  color: var(--highlight1);
-}
-
-hl2 {
-  color: var(--highlight2);
-}
-
-hl3 {
-  color: var(--highlight3);
-}
-
-hl4 {
-  color: var(--highlight4);
-}
-
-h1, h2, h3, h4, h5 {
-  margin: 0em;
-}
-
-h1 {
-  color: var(--h1-fg);
-}
-
-h2 {
-  color: var(--h2-fg);
-}
-
-h3 {
-  color: var(--h3-fg);
-}
-
-h4 {
-  color: var(--h4-fg);
-}
-
-h5 {
-  color: var(--h5-fg);
 }
 
 /*--------REPLAY BUTTON-----------*/
@@ -436,9 +520,36 @@ h5 {
   text-align: center;
 }
 
+.shift-right {
+  padding-left: 20px;
+}
+.shift-right > :is(ul, ol) {
+  padding-inline-start: 5px;
+}
+.shift-right > :is(ul, ol):first-child {
+  margin-block-start: 5px;
+}
+
 /*------------------------------------- BUTTONS */
-.night_mode button {
-  background-color: rgb(var(--ctp-mantle)) !important;
+button,
+.isMac button {
+  background-color: var(--tag-bg);
+  color: var(--tag-fg);
+  color: var(--text-fg);
+  border-radius: 0.2em;
+  box-shadow: none;
+  border: 1px solid var(--card-border);
+  border-bottom-color: var(--card-border);
+  font-size: var(--font-size-small);
+  font-family: inherit;
+  transition: all 0.25s;
+}
+button:active, button:hover,
+.isMac button:active,
+.isMac button:hover {
+  background-color: var(--tag-bg-active);
+  color: var(--tag-fg-active);
+  cursor: pointer;
 }
 
 /*--------------------------------------------------- ADDITIONS */
@@ -549,6 +660,15 @@ h5 {
 .dope-image img:hover {
   max-width: 100% !important;
   cursor: default;
+}
+
+.reaction-box {
+  border: 1px solid rgb(var(--ctp-overlay0));
+  padding: 5px;
+  border-radius: 7px;
+  margin-block: 5px;
+  background-color: rgb(var(--ctp-base));
+  line-height: 2;
 }
 
 /*------------------------------------ ULTIMATE GEOGRAPHY */
@@ -666,10 +786,6 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
   margin-bottom: 0.2em;
   font-weight: bold;
   font-size: 1em;
-}
-
-#io-revl-btn {
-  font-size: 0.5em;
 }
 
 /* ADJUSTMENTS FOR MOBILE DEVICES */
@@ -941,44 +1057,6 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
   font-size: var(--font-size-small);
 }
 
-/* -------------------------------------------------- IMAGES */
-img {
-  border-radius: 0.25em;
-  display: block;
-  margin: 1em auto;
-  max-width: var(--img-width) !important;
-  transition: max-width 0.25s 0.1s, opacity 0.25s 0.1s, filter 0.1s, transform 0s;
-}
-
-.night_mode img {
-  filter: var(--img-filter);
-  opacity: var(--img-brightness);
-}
-
-img:hover {
-  cursor: zoom-in;
-  filter: none;
-  max-width: 100% !important;
-  opacity: 1;
-}
-
-img + br {
-  display: none;
-}
-
-html:not(.mobile) img:active {
-  border: 1px solid var(--link-fg-active);
-  cursor: zoom-out;
-  filter: none;
-  left: 0;
-  max-width: 95% !important;
-  opacity: 1;
-  position: fixed;
-  top: 0;
-  transform: translate(calc(50vw - 50%), calc(50vh - 50%));
-  z-index: 100;
-}
-
 .randomize-highlight {
   color: var(--cloze-fg);
 }
@@ -1013,7 +1091,7 @@ html:not(.mobile) img:active {
 }
 /*---------------------------------- SELECT FONTS */
 :root {
-  --font-family: "Iosevka Comfy Duo", "Arial";
+  --font-family: "Karla";
 }
 
 .mobile {

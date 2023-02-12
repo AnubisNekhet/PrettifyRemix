@@ -1,7 +1,7 @@
 /* -------------------------------------------------- BACKGROUND */
 .card {
   cursor: default;
-  padding: 0.5em 0;
+  padding: 0.5em 0.2em;
 }
 html:not(.mobile) .card {
   padding: 0.5em;
@@ -60,9 +60,22 @@ html:not(.mobile) .card {
   display: flex;
   color: var(--text-fg-faint);
   font-size: var(--font-size-small);
+  white-space: nowrap;
+	text-overflow: ellipsis;
+  overflow: scroll;
 }
+.prettify-deck::-webkit-scrollbar {
+	display: none;
+}
+
 .mobile .prettify-deck {
   margin: 1em;
+}
+
+.prettify-subdeck {
+  text-overflow: ellipsis;
+  overflow: clip;
+  min-width: fit-content;
 }
 
 /* -------------------------------------------------- TAGS */
@@ -147,84 +160,22 @@ a:hover, a:active {
   text-decoration: underline;
   color: var(--link-fg-active);
 }
-/* ------------------------------------------------------- INPUT */
-input {
-  background-color: var(--card-bg);
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--card-border);
-  border-radius: 7px;
-  min-height: 25px;
-  font-family: var(--font-family) !important;
-  font-size: var(--font-size-regular) !important;
-  color: var(--text-fg-faint);
-  padding: 10px;
-}
-input::selection {
-  background-color: rgb(var(--ctp-blue)) !important;
-  color: var(--card-bg) !important;
-}
 /* -------------------------------------------------- FORMATTING */
-b {
-  color: none;
-}
-
-i {
-  color: none;
-}
-
-b > i,
-i > b {
-  color: none;
-}
-
-u {
-  color: none;
-}
-
-hl {
-    color: var(--highlight1);
-}
-hl2 {
-    color: var(--highlight2);
-}
-hl3 {
-    color: var(--highlight3);
-}
-hl4 {
-    color: var(--highlight4);
-}
-h1, h2, h3, h4, h5 { margin: 0em;}
-h1 {
-    color: var(--h1-fg);
-}
-h2 {
-    color: var(--h2-fg);
-}
-h3 {
-    color: var(--h3-fg);
-}
-h4 {
-    color: var(--h4-fg);
-}
-h5 {
-    color: var(--h5-fg);
-}
+@import "text-elements.scss";
+/* ------------------------------------------------------- INPUT */
+@import "input.scss";
 /*--------REPLAY BUTTON-----------*/
-.replay-button svg circle { fill: var(--card-bg); stroke: var(--tag-bg); stroke-width: 4px; }
-.replay-button svg path { fill: var(--tag-bg); stroke: var(--tag-bg); }
-.replay-button svg { width: 40px; height: 40px;}
-.morsecode {
-  padding: 15px 20px;
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 10px;
-  background-color: rgba(220, 224, 232,0.4);
-  border: solid 2px var(--card-border);
-}
+@import "replay-button.scss";
 /*--------------------------CENTER TEXT DIV------------------------*/
 .center-text { text-align: center;}
-/*------------------------------------- BUTTONS */
-.night_mode button {
-  background-color: rgb(var(--ctp-mantle)) !important;
+.shift-right {
+  padding-left: 20px;
+  & > :is(ul, ol) {
+    padding-inline-start: 5px;
+    &:first-child {
+      margin-block-start: 5px;
+    }
+  }
 }
+/*------------------------------------- BUTTONS */
+@import "buttons.scss"
