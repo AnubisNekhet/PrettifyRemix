@@ -501,11 +501,6 @@ input::selection {
   stroke: var(--tag-bg);
 }
 
-.replay-button svg {
-  width: 40px;
-  height: 40px;
-}
-
 .morsecode {
   padding: 15px 20px;
   margin-left: 5px;
@@ -513,6 +508,16 @@ input::selection {
   border-radius: 10px;
   background-color: rgba(220, 224, 232, 0.4);
   border: solid 2px var(--card-border);
+}
+
+.replay-button svg {
+  padding: 20px;
+  width: 0px;
+  height: 0px;
+  background-color: var(--text-fg);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolygon points='10 8 16 12 10 16 10 8'%3E%3C/polygon%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
 }
 
 /*--------------------------CENTER TEXT DIV------------------------*/
