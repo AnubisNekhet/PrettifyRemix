@@ -34,21 +34,6 @@ https://www.buymeacoffee.com/anubisnekhet
 }
 
 /* -------------------------------------------------- COLORS */
-.card.card.night_mode {
-  background-color: #242426;
-  --text-fg: #ffffffe6;
-  --text-fg-faint: #ffffffb3;
-  --text-bg-selected: #ffffff1f;
-  --card-bg: #2e2f31;
-  --card-border: #ffffff0a;
-  --card-box-shadow: #0000001f;
-  --divider: #ffffff1f;
-  --tag-fg: #ffffffb3;
-  --tag-bg: #ffffff14;
-  --tag-fg-active: #ffffff;
-  --tag-bg-active: #ffffff1f;
-}
-
 /*--------------------------------------------------- THEME VARS */
 .card {
   --text-fg: #4C4F69;
@@ -96,6 +81,7 @@ https://www.buymeacoffee.com/anubisnekhet
   --scheme-lavender: #7287FD;
   --scheme-crust: #DCE0E8;
   --scheme-grey: #6C6F85;
+  --mark-color: rgba(228, 147, 32, 0.2);
   --ctp-rosewater: 222, 149, 132;
   --ctp-flamingo: 221, 120, 120;
   --ctp-pink: 236, 131, 208;
@@ -130,19 +116,19 @@ https://www.buymeacoffee.com/anubisnekhet
 }
 
 .card.night_mode {
-  --text-fg: #FFFFFF;
-  --text-fg-faint: #BDBDBD;
-  --text-bg-selected: #545454;
-  --card-border: #545454;
+  --text-fg: #C6D0F5;
+  --text-fg-faint: #A1A8C9;
+  --text-bg-selected: #43465A;
+  --card-border: #43465A;
   --card-box-shadow: #0000001f;
-  --divider: #545454;
-  --tag-fg: #D2D2D2;
-  --tag-bg: #7E7E7E;
+  --divider: #43465A;
+  --tag-fg: #B3BCDF;
+  --tag-bg: #696D86;
   --tag-fg-active: #F5E0DC;
-  --tag-bg-active: #696969;
+  --tag-bg-active: #565970;
   --tag-border: transparent;
   --cloze-fg: #F9E2AF;
-  --cloze-bg: #2A2A2A;
+  --cloze-bg: #1E1E2E;
   --link-fg: #87B0F9;
   --link-bg: transparent;
   --link-fg-active: #89DCEB;
@@ -173,8 +159,9 @@ https://www.buymeacoffee.com/anubisnekhet
   --scheme-sapphire: #74C7EC;
   --scheme-blue: #87B0F9;
   --scheme-lavender: #B4BEFE;
-  --scheme-crust: #000000;
-  --scheme-grey: #BDBDBD;
+  --scheme-crust: #11111B;
+  --scheme-grey: #A1A8C9;
+  --mark-color: rgba(249, 226, 175, 0.2);
   --ctp-rosewater: 245, 224, 220;
   --ctp-flamingo: 242, 205, 205;
   --ctp-pink: 245, 194, 231;
@@ -189,23 +176,23 @@ https://www.buymeacoffee.com/anubisnekhet
   --ctp-sapphire: 116, 199, 236;
   --ctp-blue: 135, 176, 249;
   --ctp-lavender: 180, 190, 254;
-  --ctp-text: 255, 255, 255;
-  --ctp-subtext1: 210, 210, 210;
-  --ctp-subtext0: 189, 189, 189;
-  --ctp-overlay2: 168, 168, 168;
-  --ctp-overlay1: 147, 147, 147;
-  --ctp-overlay0: 126, 126, 126;
-  --ctp-surface2: 105, 105, 105;
-  --ctp-surface1: 84, 84, 84;
-  --ctp-surface0: 63, 63, 63;
-  --ctp-base: 42, 42, 42;
-  --ctp-mantle: 21, 21, 21;
-  --ctp-crust: 0, 0, 0;
+  --ctp-text: 198, 208, 245;
+  --ctp-subtext1: 179, 188, 223;
+  --ctp-subtext0: 161, 168, 201;
+  --ctp-overlay2: 142, 149, 179;
+  --ctp-overlay1: 123, 129, 157;
+  --ctp-overlay0: 105, 109, 134;
+  --ctp-surface2: 86, 89, 112;
+  --ctp-surface1: 67, 70, 90;
+  --ctp-surface0: 49, 50, 68;
+  --ctp-base: 30, 30, 46;
+  --ctp-mantle: 24, 24, 37;
+  --ctp-crust: 17, 17, 27;
 }
 
 .card.night_mode {
-  background-color: #2A2A2A;
-  --card-bg: #3F3F3F;
+  background-color: #1E1E2E;
+  --card-bg: #313244;
 }
 
 /*--------------------------------------------------- CARD STYLING */
@@ -249,8 +236,8 @@ html:not(.mobile) .card {
 
 /* -------------------------------------------------- FIELDS */
 .prettify-field {
-  margin: 0.75em;
-  margin-bottom: 0.85em;
+  margin: 1em;
+  margin-bottom: 1em;
 }
 
 .mobile .prettify-field {
@@ -258,7 +245,7 @@ html:not(.mobile) .card {
   margin-bottom: 0.75em;
 }
 
-.prettify-field--back {
+.prettify-field:last-child {
   margin-bottom: 1.4em;
 }
 
@@ -302,6 +289,7 @@ html:not(.mobile) .card {
 .prettify-tags {
   margin: 0.5em;
   margin-left: 1em;
+  margin-bottom: 1em;
   display: flex;
   flex-flow: row wrap;
   font-size: var(--font-size-small);
@@ -348,7 +336,6 @@ html:not(.mobile) .card {
   background-color: transparent;
   border: none;
   border-bottom: 1px dashed var(--divider);
-  margin: 0 0 1em;
   padding: 0;
 }
 
@@ -470,6 +457,12 @@ ol li::marker {
   color: var(--scheme-blue);
 }
 
+mark {
+  background-color: var(--mark-color);
+  border-radius: 3px;
+  color: var(--text-fg);
+}
+
 /* ------------------------------------------------------- INPUT */
 input {
   background-color: var(--card-bg);
@@ -524,14 +517,40 @@ input::selection {
 .center-text {
   text-align: center;
 }
+.center-text ul, .center-text ol {
+  padding-inline-start: 0;
+}
+.center-text ul li, .center-text ol li {
+  width: fit-content;
+  margin: 0 auto;
+}
 
 .shift-right {
   padding-left: 20px;
 }
-.shift-right > :is(ul, ol) {
+.shift-right :is(ul, ol) {
+  padding-inline-start: 15px;
+}
+.shift-right :is(ul, ol):first-child {
+  margin-block-start: 5px;
+}
+.shift-right .center-text {
+  padding-left: 0;
+}
+.shift-right .center-text > :is(ul, ol) {
   padding-inline-start: 5px;
 }
-.shift-right > :is(ul, ol):first-child {
+.shift-right .center-text > :is(ul, ol):first-child {
+  margin-block-start: 5px;
+}
+
+.center-text .shift-right {
+  padding-left: 0;
+}
+.center-text .shift-right > :is(ul, ol) {
+  padding-inline-start: 5px;
+}
+.center-text .shift-right > :is(ul, ol):first-child {
   margin-block-start: 5px;
 }
 
@@ -703,6 +722,7 @@ button:active, button:hover,
   width: 100% !important;
   opacity: 1;
   max-width: 100% !important;
+  max-height: 100% !important;
   border-radius: 0;
   margin: 0;
 }
@@ -711,6 +731,7 @@ button:active, button:hover,
   cursor: unset;
   filter: none;
   max-width: 100%;
+  max-height: 100%;
   opacity: 1;
 }
 
@@ -720,6 +741,7 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
   filter: none;
   left: unset;
   max-width: 100% !important;
+  max-height: 100% !important;
   opacity: 1;
   position: inherit;
   top: unset;
@@ -750,6 +772,7 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
 #io-wrapper {
   position: relative;
   width: 100%;
+  height: 100%;
 }
 
 /* OCCLUSION CSS END */

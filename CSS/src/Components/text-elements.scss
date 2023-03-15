@@ -28,3 +28,8 @@ pre {
 ol li::marker {
   color: var(--scheme-blue);
 }
+mark {
+  background-color: var(--mark-color);
+  border-radius: 3px;
+  color: var(--text-fg);
+}

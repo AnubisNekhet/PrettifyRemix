@@ -1,17 +1,15 @@
 <div class="prettify-flashcard">
-  <div class="prettify-deck">{{Subdeck}}</div>
-  <div class="prettify-divider prettify-divider--answer"></div>
+  <div class="prettify-deck">{{Deck}}</div> <div class="prettify-divider prettify-divider--answer"></div>
   <div class="prettify-field prettify-field--front">
-    {{^Left}}<div class="center-text">{{/Left}}
+{{^Left}}<div class="center-text">{{/Left}}
 
-      {{edit:cloze:Text}}
+{{edit:cloze:Text}}
 
-      {{^Left}}</div>{{/Left}}</div>
+{{^Left}}</div>{{/Left}}</div>
   {{#Extra}}<div class="prettify-divider prettify-divider--answer"></div>
-  {{^Left}}<div class="center-text">{{/Left}}
-    <div class="prettify-field prettify-field--back">{{Extra}}</div>{{^Left}}
-  </div>{{/Left}}{{/Extra}}
-  {{#Tags}}
+{{^Left}}<div class="center-text">{{/Left}}
+  <div class="prettify-field prettify-field--back extra">{{Extra}}</div>{{^Left}}</div>{{/Left}}{{/Extra}}
+   {{#Tags}}
   <div class="prettify-tags">{{clickable:Tags}}</div>
   {{/Tags}}
 </div>
@@ -25,6 +23,7 @@
       tagEl.classList.add('prettify-tag')
       tags.push(tagEl.innerHTML)
       tags.forEach((tag) => {
+tag = tag.replace("_", " ")
         var childTag = tag.split('::').filter(Boolean)
         tagEl.innerHTML = childTag[childTag.length - 1].trim()
       })
@@ -34,6 +33,7 @@
     var tags = tagsContainerEl.innerHTML.split(' ').filter(Boolean)
     var html = ''
     tags.forEach((tag) => {
+tag = tag.replace("_", " ")
       var childTag = tag.split('::').filter(Boolean)
       html +=
         "<span class='prettify-tag'>" +
@@ -42,7 +42,8 @@
     })
     tagsContainerEl.innerHTML = html
   }
-
+</script>
+<script>
   // Breadcrumbs to current deck
   var deckEl = document.querySelector('.prettify-deck')
   var subDecks = deckEl.innerHTML.split('::').filter(Boolean)

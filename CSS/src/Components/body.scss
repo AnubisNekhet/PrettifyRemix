@@ -33,14 +33,14 @@ html:not(.mobile) .card {
 }
 /* -------------------------------------------------- FIELDS */
 .prettify-field {
-  margin: 0.75em;
-  margin-bottom: 0.85em;
+  margin: 1.0em;
+  margin-bottom: 1.0em;
 }
 .mobile .prettify-field {
   margin: 0.25em;
   margin-bottom: 0.75em;
 }
-.prettify-field--back {
+.prettify-field:last-child {
   margin-bottom: 1.4em;
 }
 /* -------------------------------------------------- CLOZE */
@@ -82,6 +82,7 @@ html:not(.mobile) .card {
 .prettify-tags {
   margin: 0.5em;
   margin-left: 1em;
+  margin-bottom: 1em;
   display: flex;
   flex-flow: row wrap;
   font-size: var(--font-size-small);
@@ -117,7 +118,6 @@ html:not(.mobile) .card {
   background-color: transparent;
   border: none;
   border-bottom: 1px dashed var(--divider);
-  margin: 0 0 1em;
   padding: 0;
 }
 
@@ -167,11 +167,38 @@ a:hover, a:active {
 /*--------REPLAY BUTTON-----------*/
 @import "replay-button.scss";
 /*--------------------------CENTER TEXT DIV------------------------*/
-.center-text { text-align: center;}
+.center-text {
+  text-align: center;
+  ul, ol {
+    padding-inline-start: 0;
+    li {
+      width: fit-content;
+      margin: 0 auto;
+    }
+  }
+}
 .shift-right {
   padding-left: 20px;
-  & > :is(ul, ol) {
-    padding-inline-start: 5px;
+  :is(ul, ol) {
+    padding-inline-start: 15px;
+    &:first-child {
+      margin-block-start: 5px;
+    }
+  }
+  .center-text {
+    padding-left: 0;
+      & > :is(ul, ol) {
+        padding-inline-start: 5px;
+      &:first-child {
+        margin-block-start: 5px;
+      }
+    }
+  }
+}
+.center-text .shift-right {
+  padding-left: 0;
+    & > :is(ul, ol) {
+      padding-inline-start: 5px;
     &:first-child {
       margin-block-start: 5px;
     }

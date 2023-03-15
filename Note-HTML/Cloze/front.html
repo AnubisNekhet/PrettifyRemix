@@ -4,7 +4,7 @@
   Left: Align left (Centered by default)
 -->
 {{#Text}}<div class="prettify-flashcard">
-  <div class="prettify-deck">{{Subdeck}}</div> <div class="prettify-divider prettify-divider--answer"></div>
+  <div class="prettify-deck">{{Deck}}</div> <div class="prettify-divider prettify-divider--answer"></div>
   <div class="prettify-field prettify-field--front">
 {{^Left}}<div class="center-text">{{/Left}}
 
@@ -26,6 +26,7 @@
       tagEl.classList.add('prettify-tag')
       tags.push(tagEl.innerHTML)
       tags.forEach((tag) => {
+					tag = tag.replace("_", " ")
         var childTag = tag.split('::').filter(Boolean)
         tagEl.innerHTML = childTag[childTag.length - 1].trim()
       })
@@ -43,7 +44,8 @@
     })
     tagsContainerEl.innerHTML = html
   }
-
+</script>
+<script>
   // Breadcrumbs to current deck
   var deckEl = document.querySelector('.prettify-deck')
   var subDecks = deckEl.innerHTML.split('::').filter(Boolean)
