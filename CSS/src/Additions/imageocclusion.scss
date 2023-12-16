@@ -1,111 +1,120 @@
 /*--------------------------IMAGE OCCLUSION---------------------------*/
-#io-overlay img, #io-original img {
-  transition: none !important;
-  width: 100% !important;
-  opacity: 1;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  border-radius: 0;
-  margin: 0;
+#io-overlay img,
+#io-original img {
+	transition: none !important;
+	width: 100% !important;
+	opacity: 1;
+	max-width: 100% !important;
+	max-height: 100% !important;
+	border-radius: 0;
+	margin: 0;
 }
-#io-overlay img:hover, #io-original img:hover {
-  cursor: unset;
-  filter: none;
-  max-width: 100%;
-  max-height: 100%;
-  opacity: 1;
+#io-overlay img:hover,
+#io-original img:hover {
+	cursor: unset;
+	filter: none;
+	max-width: 100%;
+	max-height: 100%;
+	opacity: 1;
 }
-html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:active {
-  border: none;
-  cursor: unset;
-  filter: none;
-  left: unset;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  opacity: 1;
-  position: inherit;
-  top: unset;
-  transform: none;
-  z-index: inherit;
+html:not(.mobile) #io-overlay img:active,
+html:not(.mobile) #io-original img:active {
+	border: none;
+	cursor: unset;
+	filter: none;
+	left: unset;
+	max-width: 100% !important;
+	max-height: 100% !important;
+	opacity: 1;
+	position: inherit;
+	top: unset;
+	transform: none;
+	z-index: inherit;
 }
 *::selection {
-  background-color: var(--card-bg);
+	background-color: var(--card-bg);
 }
 /* OCCLUSION CSS START - don't edit this */
 #io-overlay {
-  position:absolute;
-  top:0;
-  width:100%;
-  z-index:3
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 3;
 }
 
 #io-original {
-  position:relative;
-  top:0;
-  width:100%;
-  z-index:2;
-  visibility: hidden;
+	position: relative;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+	visibility: hidden;
 }
 
 #io-wrapper {
-  position:relative;
-  width: 100%;
-  height: 100%;
+	position: relative;
+	width: 100%;
+	height: 100%;
 }
 /* OCCLUSION CSS END */
 
 /* OTHER STYLES */
-#io-header{
-  font-size: 1.1em;
-  margin-bottom: 0.2em;
+#io-header {
+	font-size: 1.1em;
+	margin-bottom: 0.2em;
 }
 
-#io-footer{
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.8em;
-  font-style: italic;
+#io-footer {
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.8em;
+	font-style: italic;
 }
 
-#io-extra-wrapper{
-  /* the wrapper is needed to center the
+#io-extra-wrapper {
+	/* the wrapper is needed to center the
   left-aligned blocks below it */
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0.5em;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.5em;
 }
 
-#io-extra{
-  text-align:center;
-  display: inline-block;
+#io-extra {
+	text-align: center;
+	display: inline-block;
 }
 
-.io-extra-entry{
-  margin-top: 0.8em;
-  font-size: 0.9em;
-  text-align:left;
+.io-extra-entry {
+	margin-top: 0.8em;
+	font-size: 0.9em;
+	text-align: left;
 }
 
-.io-field-descr{
-  margin-bottom: 0.2em;
-  font-weight: bold;
-  font-size: 1em;
+.io-field-descr {
+	margin-bottom: 0.2em;
+	font-weight: bold;
+	font-size: 1em;
 }
 
 /* ADJUSTMENTS FOR MOBILE DEVICES */
 
-.mobile .card, .mobile #content {
-  font-size: 120%;
-  margin: 0;
+.mobile .card,
+.mobile #content {
+	font-size: 120%;
+	margin: 0;
 }
 
 .mobile #io-extra-wrapper {
-  width: 95%;
+	width: 95%;
 }
 
 .mobile #io-revl-btn {
-  font-size: 0.8em;
+	font-size: 0.8em;
 }
-.mobile #io-wrapper { max-width: 90%; max-height: 90%; margin: auto;}
+.mobile #io-wrapper,
+.mobile .io-wrapper {
+	max-width: 90%;
+	max-height: 90%;
+	margin: auto;
+}

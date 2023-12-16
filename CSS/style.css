@@ -727,7 +727,6 @@ body .prettify-field--back {
 /*------------------------------------- BUTTONS */
 button,
 .isMac button {
-  background-color: var(--tag-bg);
   color: var(--tag-fg);
   color: var(--text-fg);
   border-radius: 0.2em;
@@ -737,10 +736,13 @@ button,
   font-size: var(--font-size-small);
   font-family: inherit;
   transition: all 0.25s;
+  background: none;
+  background-color: var(--tag-bg);
 }
 button:active, button:hover,
 .isMac button:active,
 .isMac button:hover {
+  background: none;
   background-color: var(--tag-bg-active);
   color: var(--tag-fg-active);
   cursor: pointer;
@@ -887,7 +889,8 @@ button:active, button:hover,
 }
 
 /*--------------------------IMAGE OCCLUSION---------------------------*/
-#io-overlay img, #io-original img {
+#io-overlay img,
+#io-original img {
   transition: none !important;
   width: 100% !important;
   opacity: 1;
@@ -897,7 +900,8 @@ button:active, button:hover,
   margin: 0;
 }
 
-#io-overlay img:hover, #io-original img:hover {
+#io-overlay img:hover,
+#io-original img:hover {
   cursor: unset;
   filter: none;
   max-width: 100%;
@@ -905,7 +909,8 @@ button:active, button:hover,
   opacity: 1;
 }
 
-html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:active {
+html:not(.mobile) #io-overlay img:active,
+html:not(.mobile) #io-original img:active {
   border: none;
   cursor: unset;
   filter: none;
@@ -962,7 +967,7 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
 
 #io-extra-wrapper {
   /* the wrapper is needed to center the
-  left-aligned blocks below it */
+   left-aligned blocks below it */
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -987,7 +992,8 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
 }
 
 /* ADJUSTMENTS FOR MOBILE DEVICES */
-.mobile .card, .mobile #content {
+.mobile .card,
+.mobile #content {
   font-size: 120%;
   margin: 0;
 }
@@ -1000,7 +1006,8 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
   font-size: 0.8em;
 }
 
-.mobile #io-wrapper {
+.mobile #io-wrapper,
+.mobile .io-wrapper {
   max-width: 90%;
   max-height: 90%;
   margin: auto;
