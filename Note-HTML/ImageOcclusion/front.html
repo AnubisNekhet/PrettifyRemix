@@ -1,0 +1,124 @@
+<div style="display: none">{{cloze:Occlusion}}</div>
+<div class="prettify-flashcard">
+	<div class="prettify-deck">{{Deck}}</div>
+	<hr class="prettify-divider prettify-divider--answer" id="answer" />
+	<div class="prettify-field prettify-field--front">
+		<div class="center-text">
+			<div id="err"></div>
+			{{#Header}}
+			<div id="io-header">{{Header}}</div>
+		</div>
+	</div>
+	<hr class="prettify-divider prettify-divider--answer" id="answer" />
+	<div class="prettify-field prettify-field--front">
+		<div class="center-text">
+			{{/Header}}
+			<div id="image-occlusion-container">
+				{{Image}}
+				<canvas id="image-occlusion-canvas"></canvas>
+			</div>
+			{{#Footer}}
+		</div>
+	</div>
+	<hr class="prettify-divider prettify-divider--answer" id="answer" />
+	<div class="prettify-field prettify-field--front extra">
+		<div class="center-text">
+			<div id="io-footer">{{Footer}}</div>
+			{{/Footer}}
+		</div>
+	</div>
+	<div><button id="toggle" class="io-revl-btn">Toggle Masks</button></div>
+	{{#Tags}}
+	<div class="prettify-tags">{{clickable:Tags}}</div>
+	{{/Tags}}
+	<div class="prettify-flip">
+		<div class="center-text">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="lucide lucide-arrow-down"
+			>
+				<line x1="12" x2="12" y1="5" y2="19"></line>
+				<polyline points="19 12 12 19 5 12"></polyline>
+			</svg>
+			Next Slide
+		</div>
+	</div>
+</div>
+<div class="prettify-hint">
+	<div class="center-text">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			class="lucide lucide-pointer"
+		>
+			<path d="M22 14a8 8 0 0 1-8 8"></path>
+			<path d="M18 11v-1a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"></path>
+			<path d="M14 10V9a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v1"></path>
+			<path d="M10 9.5V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v10"></path>
+			<path
+				d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"
+			></path>
+		</svg>
+		Tap anywhere to reveal next slide
+	</div>
+</div>
+<script>
+	try {
+		anki.imageOcclusion.setup();
+	} catch (exc) {
+		document.getElementById(
+			"err",
+		).innerHTML = `Error loading image occlusion. Is your Anki version up to date?<br><br>${exc}`;
+	}
+</script>
+<script>
+	// Split hierarchical tags
+	var tagsContainerEl = document.querySelectorAll(".prettify-tags > *");
+	if (tagsContainerEl.length > 0) {
+		var tags = [];
+		tagsContainerEl.forEach((tagEl) => {
+			tagEl.classList.add("prettify-tag");
+			tags.push(tagEl.innerHTML);
+			tags.forEach((tag) => {
+				var childTag = tag.split("::").filter(Boolean);
+				tagEl.innerHTML = childTag[childTag.length - 1].trim();
+			});
+		});
+	} else {
+		tagsContainerEl = document.querySelector(".prettify-tags");
+		var tags = tagsContainerEl.innerHTML.split(" ").filter(Boolean);
+		var html = "";
+		tags.forEach((tag) => {
+			var childTag = tag.split("::").filter(Boolean);
+			html +=
+				"<span class='prettify-tag'>" +
+				childTag[childTag.length - 1] +
+				"</span>";
+		});
+		tagsContainerEl.innerHTML = html;
+	}
+
+	// Breadcrumbs to current deck
+	var deckEl = document.querySelector(".prettify-deck");
+	var subDecks = deckEl.innerHTML.split("::").filter(Boolean);
+	html = [];
+	subDecks.forEach((subDeck) => {
+		html.push("<span class='prettify-subdeck'>" + subDeck + "</span>");
+	});
+	deckEl.innerHTML = html.join("&nbsp;/&nbsp;");
+</script>

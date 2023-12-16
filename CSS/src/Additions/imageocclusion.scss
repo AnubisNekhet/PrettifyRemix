@@ -108,4 +108,4 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
 .mobile #io-revl-btn {
   font-size: 0.8em;
 }
-#io-wrapper { max-width: 90%; margin: auto;}
+.mobile #io-wrapper { max-width: 90%; max-height: 90%; margin: auto;}

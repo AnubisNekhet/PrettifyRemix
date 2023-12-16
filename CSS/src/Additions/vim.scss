@@ -18,8 +18,8 @@
 }
 /* Night Mode Fixes */
 .night_mode .keybinding { 
-  border: solid 2px rgba(152, 139, 162,0.2);
-  border-bottom: solid 5px rgba(152, 139, 162,0.2);
+  border: solid 2px rgba(var(--ctp-subtext0),0.2);
+  border-bottom: solid 5px rgba(var(--ctp-subtext0),0.2);
 }
 .night_mode .keybinding, .night_mode .vimcommand {
   background-color: rgba(26, 24, 38,0.4); 

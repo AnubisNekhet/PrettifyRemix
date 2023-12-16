@@ -1,0 +1,9 @@
+.callout {
+	border: 1px solid rgb(var(--callout-base));
+	border-radius: 6px;
+	padding: 10px;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
+	background: rgba(var(--callout-base), 0.2);
+}

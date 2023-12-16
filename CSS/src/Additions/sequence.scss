@@ -8,3 +8,8 @@
   color: var(--text-fg-faint);
   font-size: var(--font-size-small);
 }
+.randomize-title, .random-title {
+  .extra {
+    display: block;
+  }
+}

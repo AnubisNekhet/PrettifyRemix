@@ -1,73 +1,79 @@
 $theme-list: $theme-light, $theme-dark;
 @each $theme-mode in $theme-list {
-  $selector: "";
-  @if #{map-get($theme-mode, theme-mode)} == "light" {
-    $selector: ".card";
-  } @else {
-    $selector: ".card.night_mode";
-  }
-  #{$selector} {
-    --text-fg: #{map-get($theme-mode, ctp-text)}; 
-    --text-fg-faint: #{map-get($theme-mode, ctp-subtext0)}; 
-    --text-bg-selected: #{map-get($theme-mode, ctp-surface1)}; 
-    --card-border: #{map-get($theme-mode, ctp-surface1)};
-    --card-box-shadow: #0000001f;
-    --divider: #{map-get($theme-mode, ctp-surface1)}; 
-    --tag-fg: #{map-get($theme-mode, ctp-subtext1)};
-    --tag-bg: #{map-get($theme-mode, ctp-overlay0)}; 
-    --tag-fg-active: #{map-get($theme-mode, ctp-rosewater)};
-    --tag-bg-active: #{map-get($theme-mode, ctp-surface2)};
-    --tag-border: transparent;
-    --cloze-fg: #{map-get($theme-mode, ctp-yellow)};
-    --cloze-bg: #{map-get($theme-mode, ctp-base)};
-    --link-fg: #{map-get($theme-mode, ctp-blue)}; 
-    --link-bg: transparent;
-    --link-fg-active: #{map-get($theme-mode, ctp-sky)}; 
-    --link-bg-active: transparent;
-    --bold-fg: #{map-get($theme-mode, ctp-red)};
-    --italic-fg: #{map-get($theme-mode, ctp-green)}; 
-    --h1-fg: #{map-get($theme-mode, ctp-peach)};
-    --h2-fg: #{map-get($theme-mode, ctp-teal)}; 
-    --h3-fg: #{map-get($theme-mode, ctp-mauve)}; 
-    --h4-fg: #{map-get($theme-mode, ctp-red)}; 
-    --h5-fg: #{map-get($theme-mode, ctp-sky)}; 
-    --bold-italic-fg: var(--bold-fg);
-    --highlight1: #{map-get($theme-mode, ctp-maroon)}; 
-    --highlight2: #{map-get($theme-mode, ctp-green)}; 
-    --highlight3: #{map-get($theme-mode, ctp-lavender)}; 
-    --highlight4: #{map-get($theme-mode, ctp-peach)}; 
-    --scheme-rosewater: #{map-get($theme-mode, ctp-rosewater)};
-    --scheme-flamingo: #{map-get($theme-mode, ctp-flamingo)};
-    --scheme-pink: #{map-get($theme-mode, ctp-pink)};
-    --scheme-mauve: #{map-get($theme-mode, ctp-mauve)};
-    --scheme-red: #{map-get($theme-mode, ctp-red)};
-    --scheme-maroon: #{map-get($theme-mode, ctp-maroon)};
-    --scheme-peach: #{map-get($theme-mode, ctp-peach)};
-    --scheme-yellow: #{map-get($theme-mode, ctp-yellow)};
-    --scheme-green: #{map-get($theme-mode, ctp-green)};
-    --scheme-teal: #{map-get($theme-mode, ctp-teal)};
-    --scheme-sky: #{map-get($theme-mode, ctp-sky)};
-    --scheme-sapphire: #{map-get($theme-mode, ctp-sapphire)};
-    --scheme-blue: #{map-get($theme-mode, ctp-blue)};
-    --scheme-lavender: #{map-get($theme-mode, ctp-lavender)};
-    --scheme-crust: #{map-get($theme-mode, ctp-crust)};
-    --scheme-grey: #{map-get($theme-mode, ctp-subtext0)};
-    --mark-color: #{rgba(map-get($theme-mode, ctp-yellow), 0.2)};
-    $color-list: "rosewater", "flamingo", "pink", "mauve", "red", "maroon", "peach", "yellow", "green", "teal", "sky", "sapphire", "blue", "lavender", "text", "subtext1", "subtext0", "overlay2", "overlay1", "overlay0", "surface2", "surface1", "surface0", "base", "mantle", "crust";
-    @each $color-name in $color-list {
-      --ctp-#{$color-name}: #{red(map-get($theme-mode, ctp-#{$color-name}))}, #{green(map-get($theme-mode, ctp-#{$color-name}))}, #{blue(map-get($theme-mode, ctp-#{$color-name}))};
-    }
-  }
-  @if #{map-get($theme-mode, theme-mode)} == "dark" {
-    .card.night_mode {
-      background-color: #{map-get($theme-mode, ctp-base)}; 
-      --card-bg: #{map-get($theme-mode, ctp-surface0)};
-    }
-  }
-  @if #{map-get($theme-mode, theme-mode)} == "light" {
-    .card {
-      --card-bg: #{map-get($theme-mode, ctp-base)};
-      background-color: #{map-get($theme-mode, ctp-mantle)};
-    }
-  }
+	$selector: "";
+	@if #{map-get($theme-mode, theme-mode)} == "light" {
+		$selector: ".card";
+	} @else {
+		$selector: ".card.night_mode";
+	}
+	#{$selector} {
+		--text-fg: #{map-get($theme-mode, ctp-text)};
+		--text-fg-faint: #{map-get($theme-mode, ctp-subtext0)};
+		--text-bg-selected: #{map-get($theme-mode, ctp-surface1)};
+		--card-border: #{map-get($theme-mode, ctp-surface1)};
+		--card-box-shadow: #0000001f;
+		--divider: #{map-get($theme-mode, ctp-surface1)};
+		--tag-fg: #{map-get($theme-mode, ctp-subtext1)};
+		--tag-bg: #{map-get($theme-mode, ctp-overlay0)};
+		--tag-fg-active: #{map-get($theme-mode, ctp-rosewater)};
+		--tag-bg-active: #{map-get($theme-mode, ctp-surface2)};
+		--tag-border: transparent;
+		--cloze-fg: #{map-get($theme-mode, #{$cloze-fg})};
+		--cloze-bg: #{map-get($theme-mode, ctp-base)};
+		--link-fg: #{map-get($theme-mode, ctp-blue)};
+		--link-bg: transparent;
+		--link-fg-active: #{map-get($theme-mode, ctp-sky)};
+		--link-bg-active: transparent;
+		--bold-fg: #{map-get($theme-mode, #{$cloze-fg})};
+		--italic-fg: #{map-get($theme-mode, $italic-fg)};
+		--h1-fg: #{map-get($theme-mode, #{$h1-fg})};
+		--h2-fg: #{map-get($theme-mode, #{$h2-fg})};
+		--h3-fg: #{map-get($theme-mode, #{$h3-fg})};
+		--h4-fg: #{map-get($theme-mode, #{$h4-fg})};
+		--h5-fg: #{map-get($theme-mode, #{$h5-fg})};
+		--bold-italic-fg: var(--bold-fg);
+		--highlight1: #{map-get($theme-mode, ctp-maroon)};
+		--highlight2: #{map-get($theme-mode, ctp-green)};
+		--highlight3: #{map-get($theme-mode, ctp-lavender)};
+		--highlight4: #{map-get($theme-mode, ctp-peach)};
+		--scheme-rosewater: #{map-get($theme-mode, ctp-rosewater)};
+		--scheme-flamingo: #{map-get($theme-mode, ctp-flamingo)};
+		--scheme-pink: #{map-get($theme-mode, ctp-pink)};
+		--scheme-mauve: #{map-get($theme-mode, ctp-mauve)};
+		--scheme-red: #{map-get($theme-mode, ctp-red)};
+		--scheme-maroon: #{map-get($theme-mode, ctp-maroon)};
+		--scheme-peach: #{map-get($theme-mode, ctp-peach)};
+		--scheme-yellow: #{map-get($theme-mode, ctp-yellow)};
+		--scheme-green: #{map-get($theme-mode, ctp-green)};
+		--scheme-teal: #{map-get($theme-mode, ctp-teal)};
+		--scheme-sky: #{map-get($theme-mode, ctp-sky)};
+		--scheme-sapphire: #{map-get($theme-mode, ctp-sapphire)};
+		--scheme-blue: #{map-get($theme-mode, ctp-blue)};
+		--scheme-lavender: #{map-get($theme-mode, ctp-lavender)};
+		--scheme-crust: #{map-get($theme-mode, ctp-crust)};
+		--scheme-grey: #{map-get($theme-mode, ctp-subtext0)};
+		--mark-color: #{rgba(map-get($theme-mode, ctp-yellow), 0.2)};
+		--callout-base: var(--ctp-yellow);
+		$color-list: "rosewater", "flamingo", "pink", "mauve", "red", "maroon",
+			"peach", "yellow", "green", "teal", "sky", "sapphire", "blue", "lavender",
+			"text", "subtext1", "subtext0", "overlay2", "overlay1", "overlay0",
+			"surface2", "surface1", "surface0", "base", "mantle", "crust";
+		@each $color-name in $color-list {
+			--ctp-#{$color-name}: #{red(map-get($theme-mode, ctp-#{$color-name}))},
+				#{green(map-get($theme-mode, ctp-#{$color-name}))},
+				#{blue(map-get($theme-mode, ctp-#{$color-name}))};
+		}
+	}
+	@if #{map-get($theme-mode, theme-mode)} == "dark" {
+		.card.night_mode {
+			background-color: #{map-get($theme-mode, ctp-base)};
+			--card-bg: #{map-get($theme-mode, ctp-surface0)};
+		}
+	}
+	@if #{map-get($theme-mode, theme-mode)} == "light" {
+		.card {
+			--card-bg: #{map-get($theme-mode, ctp-base)};
+			background-color: #{map-get($theme-mode, ctp-mantle)};
+		}
+	}
 }

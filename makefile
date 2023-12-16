@@ -1,6 +1,6 @@
 .PHONY: build
 build: ## Build CSS
-	sass CSS/style.scss CSS/style.css
+	sass CSS/style.scss CSS/style.css --no-charset
 
 .PHONY: help
 help: ## Display help

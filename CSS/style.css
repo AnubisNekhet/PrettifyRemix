@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*------------------------------------------------------------------
 Hey there! This card layout is a fork of Pranav Deshai's Prettify Card Layout.
 His repo: https://github.com/pranavdeshai/anki-prettify
@@ -7,6 +6,7 @@ If you liked my take on his theme you can buy me a coffee here:
 https://www.buymeacoffee.com/anubisnekhet
 ------------------------------------------------------------------*/
 /* -------------------------------------------------- PREFERENCES */
+/* -------------------------------------------------- COLOR PREFS */
 :root {
   --card-max-width: 40em;
   --card-text-align: left;
@@ -18,6 +18,7 @@ https://www.buymeacoffee.com/anubisnekhet
   --font-weight: 600;
   --table-radius: 0.8em;
   --card-radius: 8px;
+  --mochi-toggle: block;
 }
 
 .mobile {
@@ -31,6 +32,7 @@ https://www.buymeacoffee.com/anubisnekhet
   --font-weight: 600;
   --table-radius: 0.8em;
   --card-radius: 8px;
+  --mochi-mobile-toggle: block;
 }
 
 /* -------------------------------------------------- COLORS */
@@ -53,9 +55,9 @@ https://www.buymeacoffee.com/anubisnekhet
   --link-bg: transparent;
   --link-fg-active: #04A5E5;
   --link-bg-active: transparent;
-  --bold-fg: #D20F39;
+  --bold-fg: #E49320;
   --italic-fg: #40A02B;
-  --h1-fg: #FE640B;
+  --h1-fg: #40A02B;
   --h2-fg: #179299;
   --h3-fg: #8839EF;
   --h4-fg: #D20F39;
@@ -82,32 +84,85 @@ https://www.buymeacoffee.com/anubisnekhet
   --scheme-crust: #DCE0E8;
   --scheme-grey: #6C6F85;
   --mark-color: rgba(228, 147, 32, 0.2);
-  --ctp-rosewater: 222, 149, 132;
-  --ctp-flamingo: 221, 120, 120;
-  --ctp-pink: 236, 131, 208;
-  --ctp-mauve: 136, 57, 239;
-  --ctp-red: 210, 15, 57;
-  --ctp-maroon: 230, 69, 83;
-  --ctp-peach: 254, 100, 11;
-  --ctp-yellow: 228, 147, 32;
-  --ctp-green: 64, 160, 43;
-  --ctp-teal: 23, 146, 153;
-  --ctp-sky: 4, 165, 229;
-  --ctp-sapphire: 32, 159, 181;
-  --ctp-blue: 42, 110, 245;
-  --ctp-lavender: 114, 135, 253;
-  --ctp-text: 76, 79, 105;
-  --ctp-subtext1: 92, 95, 119;
-  --ctp-subtext0: 108, 111, 133;
-  --ctp-overlay2: 124, 127, 147;
-  --ctp-overlay1: 140, 143, 161;
-  --ctp-overlay0: 156, 160, 176;
-  --ctp-surface2: 172, 176, 190;
-  --ctp-surface1: 188, 192, 204;
-  --ctp-surface0: 204, 208, 218;
-  --ctp-base: 239, 241, 245;
-  --ctp-mantle: 230, 233, 239;
-  --ctp-crust: 220, 224, 232;
+  --callout-base: var(--ctp-yellow);
+  --ctp-rosewater: 222,
+  	149,
+  	132;
+  --ctp-flamingo: 221,
+  	120,
+  	120;
+  --ctp-pink: 236,
+  	131,
+  	208;
+  --ctp-mauve: 136,
+  	57,
+  	239;
+  --ctp-red: 210,
+  	15,
+  	57;
+  --ctp-maroon: 230,
+  	69,
+  	83;
+  --ctp-peach: 254,
+  	100,
+  	11;
+  --ctp-yellow: 228,
+  	147,
+  	32;
+  --ctp-green: 64,
+  	160,
+  	43;
+  --ctp-teal: 23,
+  	146,
+  	153;
+  --ctp-sky: 4,
+  	165,
+  	229;
+  --ctp-sapphire: 32,
+  	159,
+  	181;
+  --ctp-blue: 42,
+  	110,
+  	245;
+  --ctp-lavender: 114,
+  	135,
+  	253;
+  --ctp-text: 76,
+  	79,
+  	105;
+  --ctp-subtext1: 92,
+  	95,
+  	119;
+  --ctp-subtext0: 108,
+  	111,
+  	133;
+  --ctp-overlay2: 124,
+  	127,
+  	147;
+  --ctp-overlay1: 140,
+  	143,
+  	161;
+  --ctp-overlay0: 156,
+  	160,
+  	176;
+  --ctp-surface2: 172,
+  	176,
+  	190;
+  --ctp-surface1: 188,
+  	192,
+  	204;
+  --ctp-surface0: 204,
+  	208,
+  	218;
+  --ctp-base: 239,
+  	241,
+  	245;
+  --ctp-mantle: 230,
+  	233,
+  	239;
+  --ctp-crust: 220,
+  	224,
+  	232;
 }
 
 .card {
@@ -116,83 +171,136 @@ https://www.buymeacoffee.com/anubisnekhet
 }
 
 .card.night_mode {
-  --text-fg: #C6D0F5;
-  --text-fg-faint: #A1A8C9;
-  --text-bg-selected: #43465A;
-  --card-border: #43465A;
+  --text-fg: hsl(220deg, 40%, 90%);
+  --text-fg-faint: hsl(220deg, 15%, 70%);
+  --text-bg-selected: hsl(220deg, 15%, 21%);
+  --card-border: hsl(220deg, 15%, 21%);
   --card-box-shadow: #0000001f;
-  --divider: #43465A;
-  --tag-fg: #B3BCDF;
-  --tag-bg: #696D86;
-  --tag-fg-active: #F5E0DC;
-  --tag-bg-active: #565970;
+  --divider: hsl(220deg, 15%, 21%);
+  --tag-fg: hsl(220deg, 30%, 80%);
+  --tag-bg: hsl(220deg, 15%, 29%);
+  --tag-fg-active: #f5e0dc;
+  --tag-bg-active: hsl(220deg, 15%, 25%);
   --tag-border: transparent;
-  --cloze-fg: #F9E2AF;
-  --cloze-bg: #1E1E2E;
-  --link-fg: #87B0F9;
+  --cloze-fg: #f9e2af;
+  --cloze-bg: hsl(220deg, 15%, 13%);
+  --link-fg: #87b0f9;
   --link-bg: transparent;
-  --link-fg-active: #89DCEB;
+  --link-fg-active: #89dceb;
   --link-bg-active: transparent;
-  --bold-fg: #F38BA8;
-  --italic-fg: #A6E3A1;
-  --h1-fg: #FAB387;
-  --h2-fg: #94E2D5;
-  --h3-fg: #CBA6F7;
-  --h4-fg: #F38BA8;
-  --h5-fg: #89DCEB;
+  --bold-fg: #f9e2af;
+  --italic-fg: #a6e3a1;
+  --h1-fg: #a6e3a1;
+  --h2-fg: #94e2d5;
+  --h3-fg: #cba6f7;
+  --h4-fg: #f38ba8;
+  --h5-fg: #89dceb;
   --bold-italic-fg: var(--bold-fg);
-  --highlight1: #EBA0AC;
-  --highlight2: #A6E3A1;
-  --highlight3: #B4BEFE;
-  --highlight4: #FAB387;
-  --scheme-rosewater: #F5E0DC;
-  --scheme-flamingo: #F2CDCD;
-  --scheme-pink: #F5C2E7;
-  --scheme-mauve: #CBA6F7;
-  --scheme-red: #F38BA8;
-  --scheme-maroon: #EBA0AC;
-  --scheme-peach: #FAB387;
-  --scheme-yellow: #F9E2AF;
-  --scheme-green: #A6E3A1;
-  --scheme-teal: #94E2D5;
-  --scheme-sky: #89DCEB;
-  --scheme-sapphire: #74C7EC;
-  --scheme-blue: #87B0F9;
-  --scheme-lavender: #B4BEFE;
-  --scheme-crust: #11111B;
-  --scheme-grey: #A1A8C9;
+  --highlight1: #eba0ac;
+  --highlight2: #a6e3a1;
+  --highlight3: #b4befe;
+  --highlight4: #fab387;
+  --scheme-rosewater: #f5e0dc;
+  --scheme-flamingo: #f2cdcd;
+  --scheme-pink: #f5c2e7;
+  --scheme-mauve: #cba6f7;
+  --scheme-red: #f38ba8;
+  --scheme-maroon: #eba0ac;
+  --scheme-peach: #fab387;
+  --scheme-yellow: #f9e2af;
+  --scheme-green: #a6e3a1;
+  --scheme-teal: #94e2d5;
+  --scheme-sky: #89dceb;
+  --scheme-sapphire: #74c7ec;
+  --scheme-blue: #87b0f9;
+  --scheme-lavender: #b4befe;
+  --scheme-crust: hsl(220deg, 15%, 7%);
+  --scheme-grey: hsl(220deg, 15%, 70%);
   --mark-color: rgba(249, 226, 175, 0.2);
-  --ctp-rosewater: 245, 224, 220;
-  --ctp-flamingo: 242, 205, 205;
-  --ctp-pink: 245, 194, 231;
-  --ctp-mauve: 203, 166, 247;
-  --ctp-red: 243, 139, 168;
-  --ctp-maroon: 235, 160, 172;
-  --ctp-peach: 250, 179, 135;
-  --ctp-yellow: 249, 226, 175;
-  --ctp-green: 166, 227, 161;
-  --ctp-teal: 148, 226, 213;
-  --ctp-sky: 137, 220, 235;
-  --ctp-sapphire: 116, 199, 236;
-  --ctp-blue: 135, 176, 249;
-  --ctp-lavender: 180, 190, 254;
-  --ctp-text: 198, 208, 245;
-  --ctp-subtext1: 179, 188, 223;
-  --ctp-subtext0: 161, 168, 201;
-  --ctp-overlay2: 142, 149, 179;
-  --ctp-overlay1: 123, 129, 157;
-  --ctp-overlay0: 105, 109, 134;
-  --ctp-surface2: 86, 89, 112;
-  --ctp-surface1: 67, 70, 90;
-  --ctp-surface0: 49, 50, 68;
-  --ctp-base: 30, 30, 46;
-  --ctp-mantle: 24, 24, 37;
-  --ctp-crust: 17, 17, 27;
+  --callout-base: var(--ctp-yellow);
+  --ctp-rosewater: 245,
+  	224,
+  	220;
+  --ctp-flamingo: 242,
+  	205,
+  	205;
+  --ctp-pink: 245,
+  	194,
+  	231;
+  --ctp-mauve: 203,
+  	166,
+  	247;
+  --ctp-red: 243,
+  	139,
+  	168;
+  --ctp-maroon: 235,
+  	160,
+  	172;
+  --ctp-peach: 250,
+  	179,
+  	135;
+  --ctp-yellow: 249,
+  	226,
+  	175;
+  --ctp-green: 166,
+  	227,
+  	161;
+  --ctp-teal: 148,
+  	226,
+  	213;
+  --ctp-sky: 137,
+  	220,
+  	235;
+  --ctp-sapphire: 116,
+  	199,
+  	236;
+  --ctp-blue: 135,
+  	176,
+  	249;
+  --ctp-lavender: 180,
+  	190,
+  	254;
+  --ctp-text: 219,
+  	226,
+  	240;
+  --ctp-subtext1: 189,
+  	199,
+  	219;
+  --ctp-subtext0: 167,
+  	175,
+  	190;
+  --ctp-overlay2: 82,
+  	92,
+  	111;
+  --ctp-overlay1: 72,
+  	80,
+  	97;
+  --ctp-overlay0: 63,
+  	70,
+  	85;
+  --ctp-surface2: 54,
+  	61,
+  	73;
+  --ctp-surface1: 46,
+  	51,
+  	62;
+  --ctp-surface0: 35,
+  	39,
+  	47;
+  --ctp-base: 28,
+  	31,
+  	38;
+  --ctp-mantle: 22,
+  	24,
+  	29;
+  --ctp-crust: 15,
+  	17,
+  	21;
 }
 
 .card.night_mode {
-  background-color: #1E1E2E;
-  --card-bg: #313244;
+  background-color: hsl(220deg, 15%, 13%);
+  --card-bg: hsl(220deg, 15%, 16%);
 }
 
 /*--------------------------------------------------- CARD STYLING */
@@ -208,6 +316,11 @@ html:not(.mobile) .card {
 
 .card::-webkit-scrollbar {
   display: none;
+}
+
+body,
+body.nightMode {
+  color: transparent;
 }
 
 /* -------------------------------------------------- FLASHCARD */
@@ -245,7 +358,7 @@ html:not(.mobile) .card {
   margin-bottom: 0.75em;
 }
 
-.prettify-field:last-child {
+.prettify-field:last-of-type {
   margin-bottom: 1.4em;
 }
 
@@ -352,9 +465,11 @@ table {
   border: 1px solid;
   text-align: center;
   border-color: var(--card-border);
+  margin-top: 10px;
 }
 
-td, th {
+td,
+th {
   border: 1px solid;
   text-align: center;
   border-color: var(--card-border);
@@ -374,12 +489,14 @@ tr:nth-of-type(odd) {
 }
 
 /* -------------------------------------------------- HYPERLINKS */
-a, a:visited {
+a,
+a:visited {
   text-decoration: none;
   color: var(--link-fg);
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   text-decoration: underline;
   color: var(--link-fg-active);
 }
@@ -517,10 +634,12 @@ input::selection {
 .center-text {
   text-align: center;
 }
-.center-text ul, .center-text ol {
+.center-text ul,
+.center-text ol {
   padding-inline-start: 0;
 }
-.center-text ul li, .center-text ol li {
+.center-text ul li,
+.center-text ol li {
   width: fit-content;
   margin: 0 auto;
 }
@@ -554,6 +673,57 @@ input::selection {
   margin-block-start: 5px;
 }
 
+/*--------------------------------------- MOCHI */
+.prettify-flip {
+  color: var(--text-fg-faint);
+  font-size: var(--font-size-small);
+  padding: 1em 0;
+  background: rgba(255, 255, 255, 0.0196078431);
+  border-top: 1px dashed var(--divider);
+  display: var(--mochi-mobile-toggle, var(--mochi-toggle, none));
+}
+
+.prettify-hint {
+  color: var(--text-fg-faint);
+  opacity: 0.5;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family);
+  padding-top: 1em;
+  display: var(--mochi-mobile-toggle, var(--mochi-toggle, none));
+}
+
+.prettify-flip svg {
+  height: 20px;
+  width: 20px;
+  margin-bottom: calc(-13px + 0.5 * var(--font-size-small));
+}
+
+.prettify-hint svg {
+  height: 20px;
+  width: 20px;
+  margin-bottom: calc(-12px + 0.5 * var(--font-size-small));
+}
+
+[href="https://anki.tenderapp.com/kb/problems/no-cloze-found-on-card"] {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+/*
+@keyframes open {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 100vh;
+  }
+}
+body .prettify-field--back {
+  animation: open 3s ease !important;
+  overflow: hidden;
+}
+*/
 /*------------------------------------- BUTTONS */
 button,
 .isMac button {
@@ -631,8 +801,8 @@ button:active, button:hover,
 
 /* Night Mode Fixes */
 .night_mode .keybinding {
-  border: solid 2px rgba(152, 139, 162, 0.2);
-  border-bottom: solid 5px rgba(152, 139, 162, 0.2);
+  border: solid 2px rgba(var(--ctp-subtext0), 0.2);
+  border-bottom: solid 5px rgba(var(--ctp-subtext0), 0.2);
 }
 
 .night_mode .keybinding, .night_mode .vimcommand {
@@ -830,8 +1000,9 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
   font-size: 0.8em;
 }
 
-#io-wrapper {
+.mobile #io-wrapper {
   max-width: 90%;
+  max-height: 90%;
   margin: auto;
 }
 
@@ -1085,6 +1256,49 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
   font-size: var(--font-size-small);
 }
 
+/* -------------------------------------------------- IMAGES */
+img.zoomable-image,
+.zoomable-image img {
+  border-radius: 0.25em;
+  display: block;
+  margin: 1em auto;
+  max-width: var(--img-width) !important;
+  transition: max-width 0.25s 0.1s, opacity 0.25s 0.1s, filter 0.1s, transform 0s;
+}
+
+.night_mode img.zoomable-image,
+.night_mode .zoomable-image img {
+  filter: var(--img-filter);
+  opacity: var(--img-brightness);
+}
+
+img.zoomable-image:hover,
+.zoomable-image img:hover {
+  cursor: zoom-in;
+  filter: none;
+  max-width: 100% !important;
+  opacity: 1;
+}
+
+img.zoomable-image + br,
+.zoomable-image img + br {
+  display: none;
+}
+
+html:not(.mobile) img.zoomable-image:active,
+html:not(.mobile) .zoomable-image img:active {
+  border: 1px solid var(--link-fg-active);
+  cursor: zoom-out;
+  filter: none;
+  left: 0;
+  max-width: 95% !important;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+  z-index: 100;
+}
+
 .randomize-highlight {
   color: var(--cloze-fg);
 }
@@ -1096,6 +1310,20 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
 .random-extra {
   color: var(--text-fg-faint);
   font-size: var(--font-size-small);
+}
+
+.randomize-title .extra, .random-title .extra {
+  display: block;
+}
+
+.callout {
+  border: 1px solid rgb(var(--callout-base));
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  background: rgba(var(--callout-base), 0.2);
 }
 
 .prettify-tags {
@@ -1123,7 +1351,7 @@ html:not(.mobile) #io-overlay img:active, html:not(.mobile) #io-original img:act
 }
 
 .mobile {
-  --font-family: "Karla";
+  --font-family: "Rubik";
 }
 
 /*# sourceMappingURL=style.css.map */

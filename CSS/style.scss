@@ -6,63 +6,77 @@ If you liked my take on his theme you can buy me a coffee here:
 https://www.buymeacoffee.com/anubisnekhet
 ------------------------------------------------------------------*/
 /* -------------------------------------------------- PREFERENCES */
-:root { 
-  --card-max-width: 40em;
-  --card-text-align: left;
-  --font-size-regular: 16px;
-  --font-size-small: 14px;
-  --img-width: 50%;
-  --img-brightness: 0.95;
-  --img-filter: none;
-  --font-weight: 600;
-  --table-radius: 0.8em;
-  --card-radius: 8px;
+/* -------------------------------------------------- COLOR PREFS */
+$cloze-fg: ctp-yellow;
+$bold-fg: ctp-red;
+$italic-fg: ctp-green;
+$h1-fg: ctp-green;
+$h2-fg: ctp-teal;
+$h3-fg: ctp-mauve;
+$h4-fg: ctp-red;
+$h5-fg: ctp-sky;
+
+:root {
+	--card-max-width: 40em;
+	--card-text-align: left;
+	--font-size-regular: 16px;
+	--font-size-small: 14px;
+	--img-width: 50%;
+	--img-brightness: 0.95;
+	--img-filter: none;
+	--font-weight: 600;
+	--table-radius: 0.8em;
+	--card-radius: 8px;
+	--mochi-toggle: block;
 }
-.mobile { 
-  --card-max-width: 40em;
-  --card-text-align: left;
-  --font-size-regular: 16px;
-  --font-size-small: 14px;
-  --img-width: 50%;
-  --img-brightness: 0.95;
-  --img-filter: none;
-  --font-weight: 600;
-  --table-radius: 0.8em;
-  --card-radius: 8px;
+.mobile {
+	--card-max-width: 40em;
+	--card-text-align: left;
+	--font-size-regular: 16px;
+	--font-size-small: 14px;
+	--img-width: 50%;
+	--img-brightness: 0.95;
+	--img-filter: none;
+	--font-weight: 600;
+	--table-radius: 0.8em;
+	--card-radius: 8px;
+	--mochi-mobile-toggle: block;
 }
 /* -------------------------------------------------- COLORS */
-@import 'src/Components/Colorschemes/latte-lt.scss'; //'-lt' means light theme, '-dt' means dark theme, pick one of each
-@import 'src/Components/Colorschemes/mocha-dt.scss'; //you can change colors, mix and match as you feel :)
+@import "src/Components/Colorschemes/latte-lt.scss"; //'-lt' means light theme, '-dt' means dark theme, pick one of each
+@import "src/Components/Colorschemes/midnight-dt.scss"; //you can change colors, mix and match as you feel :)
 /*--------------------------------------------------- THEME VARS */
-@import 'src/Components/theme-variables.scss';
+@import "src/Components/theme-variables.scss";
 /*--------------------------------------------------- CARD STYLING */
-@import 'src/Components/body.scss';
+@import "src/Components/body.scss";
 /*--------------------------------------------------- ADDITIONS */
 //This section is upto you, you can add certain css sections specialised for certain decks or misc. features
- @import 'src/Additions/germanlearningdeck.scss';
- @import 'src/Additions/vim.scss';
- @import 'src/Additions/morsecode.scss';
- @import 'src/Additions/dopeanatomy.scss';
- @import 'src/Additions/ultimategeography.scss';
- @import 'src/Additions/imageocclusion.scss';
- @import 'src/Additions/anking.scss';
- @import 'src/Additions/fallacies.scss';
- // @import 'src/Additions/zoomable-images.scss';
- @import 'src/Additions/sequence.scss';
+@import "src/Additions/germanlearningdeck.scss";
+@import "src/Additions/vim.scss";
+@import "src/Additions/morsecode.scss";
+@import "src/Additions/dopeanatomy.scss";
+@import "src/Additions/ultimategeography.scss";
+@import "src/Additions/imageocclusion.scss";
+@import "src/Additions/anking.scss";
+@import "src/Additions/fallacies.scss";
+// @import "src/Additions/zoomable-images.scss";
+@import "src/Additions/zoomable-images-toggleable.scss";
+@import "src/Additions/sequence.scss";
+@import "src/Additions/callouts.scss";
 
 .prettify-tags {
-  display: block; //Use 'block' if you want to display tags or 'none' if you want to hide them
+	display: block; //Use 'block' if you want to display tags or 'none' if you want to hide them
 }
 
 /* -------------------------------------------------- FONTS */
 //Add custom fonts here if you want to use them on mobile devices or something
 //Do note that this bloats the css size by a lot
-@import 'src/Fonts/karla.scss';
+@import "src/Fonts/karla.scss";
 /*---------------------------------- SELECT FONTS */
 //Specify fonts here
 :root {
-  --font-family: "Karla";
+	--font-family: "Karla";
 }
 .mobile {
-  --font-family: "Karla";
+	--font-family: "Rubik";
 }

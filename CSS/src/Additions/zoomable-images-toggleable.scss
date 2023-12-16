@@ -1,5 +1,6 @@
 /* -------------------------------------------------- IMAGES */
-img {
+img.zoomable-image,
+.zoomable-image img {
 	border-radius: 0.25em;
 	display: block;
 	margin: 1em auto;
@@ -10,20 +11,24 @@ img {
 		filter 0.1s,
 		transform 0s;
 }
-.night_mode img {
+.night_mode img.zoomable-image,
+.night_mode .zoomable-image img {
 	filter: var(--img-filter);
 	opacity: var(--img-brightness);
 }
-img:hover {
+img.zoomable-image:hover,
+.zoomable-image img:hover {
 	cursor: zoom-in;
 	filter: none;
 	max-width: 100% !important;
 	opacity: 1;
 }
-img + br {
+img.zoomable-image + br,
+.zoomable-image img + br {
 	display: none;
 }
-html:not(.mobile) img:active {
+html:not(.mobile) img.zoomable-image:active,
+html:not(.mobile) .zoomable-image img:active {
 	border: 1px solid var(--link-fg-active);
 	cursor: zoom-out;
 	filter: none;

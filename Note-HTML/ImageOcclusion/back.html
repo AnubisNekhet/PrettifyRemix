@@ -1,0 +1,129 @@
+<div style="display: none">{{cloze:Occlusion}}</div>
+<div class="prettify-flashcard">
+	<div class="prettify-deck">{{Deck}}</div>
+	<hr class="prettify-divider prettify-divider--answer" id="answer" />
+	<div class="prettify-field prettify-field--front">
+		<div class="center-text">
+			<div id="err"></div>
+			{{#Header}}
+			<div id="io-header">{{Header}}</div>
+		</div>
+	</div>
+	<hr class="prettify-divider prettify-divider--answer" id="answer" />
+	<div class="prettify-field prettify-field--front">
+		<div class="center-text">
+			{{/Header}}
+			<div id="image-occlusion-container">
+				{{Image}}
+				<canvas id="image-occlusion-canvas"></canvas>
+			</div>
+			{{#Footer}}
+		</div>
+	</div>
+	<hr class="prettify-divider prettify-divider--answer" id="answer" />
+	<div class="prettify-field prettify-field--front extra">
+		<div class="center-text">
+			<div id="io-footer">{{Footer}}</div>
+			{{/Footer}} {{#Remarks}}
+		</div>
+	</div>
+	<hr class="prettify-divider prettify-divider--answer" id="answer" />
+	<div class="prettify-field prettify-field--front extra">
+		<div class="center-text">
+			<div id="io-footer">{{Remarks}}</div>
+			{{/Remarks}} {{#Sources}}
+		</div>
+	</div>
+	<hr class="prettify-divider prettify-divider--answer" id="answer" />
+	<div class="prettify-field prettify-field--front extra">
+		<div class="center-text">
+			<div id="io-footer">{{Sources}}</div>
+			{{/Sources}} {{#Extra 1}}
+		</div>
+	</div>
+	<hr class="prettify-divider prettify-divider--answer" id="answer" />
+	<div class="prettify-field prettify-field--front extra">
+		<div class="center-text">
+			<div id="io-footer">{{Extra 1}}</div>
+			{{/Extra 1}} {{#Extra 2}}
+		</div>
+	</div>
+	<hr class="prettify-divider prettify-divider--answer" id="answer" />
+	<div class="prettify-field prettify-field--front extra">
+		<div class="center-text">
+			<div id="io-footer">{{Extra 2}}</div>
+			{{/Extra 2}}
+			<div><button id="toggle" class="io-revl-btn">Toggle Masks</button></div>
+		</div>
+	</div>
+	{{#Tags}}
+	<div class="prettify-tags">{{clickable:Tags}}</div>
+	{{/Tags}}
+	<div class="prettify-flip">
+		<div class="center-text">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="lucide lucide-arrow-down"
+			>
+				<line x1="12" x2="12" y1="5" y2="19"></line>
+				<polyline points="19 12 12 19 5 12"></polyline>
+			</svg>
+			Next Slide
+		</div>
+	</div>
+</div>
+
+<script>
+	try {
+		anki.imageOcclusion.setup();
+	} catch (exc) {
+		document.getElementById(
+			"err",
+		).innerHTML = `Error loading image occlusion. Is your Anki version up to date?<br><br>${exc}`;
+	}
+</script>
+
+<script>
+	// Split hierarchical tags
+	var tagsContainerEl = document.querySelectorAll(".prettify-tags > *");
+	if (tagsContainerEl.length > 0) {
+		var tags = [];
+		tagsContainerEl.forEach((tagEl) => {
+			tagEl.classList.add("prettify-tag");
+			tags.push(tagEl.innerHTML);
+			tags.forEach((tag) => {
+				var childTag = tag.split("::").filter(Boolean);
+				tagEl.innerHTML = childTag[childTag.length - 1].trim();
+			});
+		});
+	} else {
+		tagsContainerEl = document.querySelector(".prettify-tags");
+		var tags = tagsContainerEl.innerHTML.split(" ").filter(Boolean);
+		var html = "";
+		tags.forEach((tag) => {
+			var childTag = tag.split("::").filter(Boolean);
+			html +=
+				"<span class='prettify-tag'>" +
+				childTag[childTag.length - 1] +
+				"</span>";
+		});
+		tagsContainerEl.innerHTML = html;
+	}
+
+	// Breadcrumbs to current deck
+	var deckEl = document.querySelector(".prettify-deck");
+	var subDecks = deckEl.innerHTML.split("::").filter(Boolean);
+	html = [];
+	subDecks.forEach((subDeck) => {
+		html.push("<span class='prettify-subdeck'>" + subDeck + "</span>");
+	});
+	deckEl.innerHTML = html.join("&nbsp;/&nbsp;");
+</script>

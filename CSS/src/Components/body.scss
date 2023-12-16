@@ -1,145 +1,157 @@
 /* -------------------------------------------------- BACKGROUND */
 .card {
-  cursor: default;
-  padding: 0.5em 0.2em;
+	cursor: default;
+	padding: 0.5em 0.2em;
 }
 html:not(.mobile) .card {
-  padding: 0.5em;
+	padding: 0.5em;
 }
 .card::-webkit-scrollbar {
-  display: none;
+	display: none;
+}
+body,
+body.nightMode {
+	color: transparent;
 }
 
 /* -------------------------------------------------- FLASHCARD */
 .prettify-flashcard {
-  background-color: var(--card-bg);
-  border-radius: var(--card-radius);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--card-box-shadow) 0px 7px 14px 0px, var(--card-box-shadow) 0px 3px 6px 0px;
-  color: var(--text-fg);
-  font-family: var(--font-family);
-  font-size: var(--font-size-regular);
-  line-height: 1.5;
-  margin: 0 auto;
-  max-width: var(--card-max-width);
-  text-align: var(--card-text-align);
-  word-wrap: normal;
+	background-color: var(--card-bg);
+	border-radius: var(--card-radius);
+	border: 1px solid var(--card-border);
+	box-shadow:
+		var(--card-box-shadow) 0px 7px 14px 0px,
+		var(--card-box-shadow) 0px 3px 6px 0px;
+	color: var(--text-fg);
+	font-family: var(--font-family);
+	font-size: var(--font-size-regular);
+	line-height: 1.5;
+	margin: 0 auto;
+	max-width: var(--card-max-width);
+	text-align: var(--card-text-align);
+	word-wrap: normal;
 }
 .prettify-flashcard ::selection {
-  background-color: var(--text-bg-selected);
+	background-color: var(--text-bg-selected);
 }
 .cloze-type {
-    text-align: left;
+	text-align: left;
 }
 /* -------------------------------------------------- FIELDS */
 .prettify-field {
-  margin: 1.0em;
-  margin-bottom: 1.0em;
+	margin: 1em;
+	margin-bottom: 1em;
 }
 .mobile .prettify-field {
-  margin: 0.25em;
-  margin-bottom: 0.75em;
+	margin: 0.25em;
+	margin-bottom: 0.75em;
 }
-.prettify-field:last-child {
-  margin-bottom: 1.4em;
+.prettify-field:last-of-type {
+	margin-bottom: 1.4em;
 }
 /* -------------------------------------------------- CLOZE */
 .cloze {
-  border-radius: 0.25em;
-  font-weight: bold;
-  background-color: var(--cloze-bg);
-  color: var(--cloze-fg);
-  padding: 0 0.1em;
+	border-radius: 0.25em;
+	font-weight: bold;
+	background-color: var(--cloze-bg);
+	color: var(--cloze-fg);
+	padding: 0 0.1em;
 }
 
 /* -------------------------------------------------- DECK */
 .prettify-deck {
-  margin: 0.75em;
-  margin-left: 1em;
-  margin-bottom: 0.5em;
-  display: flex;
-  color: var(--text-fg-faint);
-  font-size: var(--font-size-small);
-  white-space: nowrap;
+	margin: 0.75em;
+	margin-left: 1em;
+	margin-bottom: 0.5em;
+	display: flex;
+	color: var(--text-fg-faint);
+	font-size: var(--font-size-small);
+	white-space: nowrap;
 	text-overflow: ellipsis;
-  overflow: scroll;
+	overflow: scroll;
 }
 .prettify-deck::-webkit-scrollbar {
 	display: none;
 }
 
 .mobile .prettify-deck {
-  margin: 1em;
+	margin: 1em;
 }
 
 .prettify-subdeck {
-  text-overflow: ellipsis;
-  overflow: clip;
-  min-width: fit-content;
+	text-overflow: ellipsis;
+	overflow: clip;
+	min-width: fit-content;
 }
 
 /* -------------------------------------------------- TAGS */
 .prettify-tags {
-  margin: 0.5em;
-  margin-left: 1em;
-  margin-bottom: 1em;
-  display: flex;
-  flex-flow: row wrap;
-  font-size: var(--font-size-small);
+	margin: 0.5em;
+	margin-left: 1em;
+	margin-bottom: 1em;
+	display: flex;
+	flex-flow: row wrap;
+	font-size: var(--font-size-small);
 }
 .mobile .prettify-tags {
-  margin: 1em;
+	margin: 1em;
 }
 .prettify-tag {
-  all: initial;
-  background-color: var(--tag-bg);
-  border-radius: 0.2em;
-  color: var(--tag-fg);
-  display: inline;
-  font-size: var(--font-size-small);
-  font-family: var(--font-family);
-  margin: 0.25em;
-  padding: 0.25em;
-  transition: all 0.25s;
-  word-break: break-word;
+	all: initial;
+	background-color: var(--tag-bg);
+	border-radius: 0.2em;
+	color: var(--tag-fg);
+	display: inline;
+	font-size: var(--font-size-small);
+	font-family: var(--font-family);
+	margin: 0.25em;
+	padding: 0.25em;
+	transition: all 0.25s;
+	word-break: break-word;
 }
 .prettify-tag:hover {
-  background-color: var(--tag-bg-active);
-  color: var(--tag-fg-active);
-  cursor: pointer;
+	background-color: var(--tag-bg-active);
+	color: var(--tag-fg-active);
+	cursor: pointer;
 }
 .extra {
-  color: var(--text-fg-faint);
-  font-size: var(--font-size-small);
+	color: var(--text-fg-faint);
+	font-size: var(--font-size-small);
 }
 /* -------------------------------------------------- DIVIDER */
-.prettify-field hr { border: none; border-bottom: 1px dashed var(--divider); background-color: transparent; width: 80%;}
-.prettify-divider {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px dashed var(--divider);
-  padding: 0;
+.prettify-field hr {
+	border: none;
+	border-bottom: 1px dashed var(--divider);
+	background-color: transparent;
+	width: 80%;
 }
-
+.prettify-divider {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px dashed var(--divider);
+	padding: 0;
+}
 
 /* -------------------------------------------------- TABLES */
 table {
-  border-collapse: separate;
-  border-spacing: 0;
-  min-width: 60%;
-  position: relative;
-  box-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: scroll;
-  border: 1px solid;
-  text-align: center;
-  border-color: var(--card-border);
+	border-collapse: separate;
+	border-spacing: 0;
+	min-width: 60%;
+	position: relative;
+	box-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: scroll;
+	border: 1px solid;
+	text-align: center;
+	border-color: var(--card-border);
+	margin-top: 10px;
 }
-td, th {
-  border: 1px solid;
-  text-align: center;
-  border-color: var(--card-border);
+td,
+th {
+	border: 1px solid;
+	text-align: center;
+	border-color: var(--card-border);
 }
 /*
 tr:first-child td:first-child, tr:first-child th:first-child { border-top-left-radius: 0.8em; }
@@ -150,15 +162,19 @@ tr:first-child td, tr:first-child th { border-top-width: 2px;}
 tr:last-child td, tr:last-child th { border-bottom-width: 2px;}
 tr td:first-child, tr th:first-child { border-left-width: 2px;}
 tr td:last-child, tr th:last-child { border-right-width: 2px;}*/
-tr:nth-of-type(odd) { background-color: var(--card-box-shadow);}
-/* -------------------------------------------------- HYPERLINKS */
-a, a:visited {
-  text-decoration: none;
-  color: var(--link-fg);
+tr:nth-of-type(odd) {
+	background-color: var(--card-box-shadow);
 }
-a:hover, a:active {
-  text-decoration: underline;
-  color: var(--link-fg-active);
+/* -------------------------------------------------- HYPERLINKS */
+a,
+a:visited {
+	text-decoration: none;
+	color: var(--link-fg);
+}
+a:hover,
+a:active {
+	text-decoration: underline;
+	color: var(--link-fg-active);
 }
 /* -------------------------------------------------- FORMATTING */
 @import "text-elements.scss";
@@ -168,41 +184,90 @@ a:hover, a:active {
 @import "replay-button.scss";
 /*--------------------------CENTER TEXT DIV------------------------*/
 .center-text {
-  text-align: center;
-  ul, ol {
-    padding-inline-start: 0;
-    li {
-      width: fit-content;
-      margin: 0 auto;
-    }
-  }
+	text-align: center;
+	ul,
+	ol {
+		padding-inline-start: 0;
+		li {
+			width: fit-content;
+			margin: 0 auto;
+		}
+	}
 }
 .shift-right {
-  padding-left: 20px;
-  :is(ul, ol) {
-    padding-inline-start: 15px;
-    &:first-child {
-      margin-block-start: 5px;
-    }
-  }
-  .center-text {
-    padding-left: 0;
-      & > :is(ul, ol) {
-        padding-inline-start: 5px;
-      &:first-child {
-        margin-block-start: 5px;
-      }
-    }
-  }
+	padding-left: 20px;
+	:is(ul, ol) {
+		padding-inline-start: 15px;
+		&:first-child {
+			margin-block-start: 5px;
+		}
+	}
+	.center-text {
+		padding-left: 0;
+		& > :is(ul, ol) {
+			padding-inline-start: 5px;
+			&:first-child {
+				margin-block-start: 5px;
+			}
+		}
+	}
 }
 .center-text .shift-right {
-  padding-left: 0;
-    & > :is(ul, ol) {
-      padding-inline-start: 5px;
-    &:first-child {
-      margin-block-start: 5px;
-    }
+	padding-left: 0;
+	& > :is(ul, ol) {
+		padding-inline-start: 5px;
+		&:first-child {
+			margin-block-start: 5px;
+		}
+	}
+}
+/*--------------------------------------- MOCHI */
+.prettify-flip {
+	color: var(--text-fg-faint);
+	font-size: var(--font-size-small);
+	padding: 1em 0;
+	background: #ffffff05;
+	border-top: 1px dashed var(--divider);
+	display: var(--mochi-mobile-toggle, var(--mochi-toggle, none));
+}
+.prettify-hint {
+	color: var(--text-fg-faint);
+	opacity: 0.5;
+	font-size: var(--font-size-small);
+	font-family: var(--font-family);
+	padding-top: 1em;
+	display: var(--mochi-mobile-toggle, var(--mochi-toggle, none));
+}
+.prettify-flip svg {
+	height: 20px;
+	width: 20px;
+	margin-bottom: calc(-13px + 0.5 * var(--font-size-small));
+}
+.prettify-hint svg {
+	height: 20px;
+	width: 20px;
+	margin-bottom: calc(-12px + 0.5 * var(--font-size-small));
+}
+
+[href="https://anki.tenderapp.com/kb/problems/no-cloze-found-on-card"]
+{
+	display: block;
+	width: fit-content;
+	margin: 0 auto;
+}
+/*
+@keyframes open {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 100vh;
   }
 }
+body .prettify-field--back {
+  animation: open 3s ease !important;
+  overflow: hidden;
+}
+*/
 /*------------------------------------- BUTTONS */
-@import "buttons.scss"
+@import "buttons.scss";
